@@ -1,11 +1,12 @@
 import React from 'react'
 import './Homepage.css'
+import LandingHeader from '../components/LandingHeader'
 
 const Homepage = () => {
   return (
-    <div>This is the homepage site.
+    <div>
 
-
+    <LandingHeader />
 
 
     </div>

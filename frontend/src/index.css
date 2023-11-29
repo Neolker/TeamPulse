@@ -1,10 +1,11 @@
 
 /* Globální barvy aplikace */
 
-[data-theme="light"],
-:root:not([data-theme="dark"]) {
-  --primary: #4D11D7;
-  --primary-hover: #2b0091;
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --primary: white;
+  --primary-hover: silver;
   --primary-focus: rgba(30, 136, 229, 0.125);
-  --primary-inverse: #FFF;
+  --primary-inverse: black;
+  background-color: #222;
 }
