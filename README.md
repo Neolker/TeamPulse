@@ -4,7 +4,7 @@
 - **POST** requests pass parameters in JSON format in **Body**, mostly data from forms
 - **GET** requests pass parameters that are part of the URL (route)
                                         
-| URI              | METODA | VSTUP                                                          | VÝSTUP                                                          |
+| URI              | METHOD | INPUT                                                          | OUTPUT                                                          |
 | ---------------- | ------ | -------------------------------------------------------------- | --------------------------------------------------------------- |
 | workspace/create | POST   | `name`, `description`, `owner`, `members[] {id}`               | `id`, `name`, `description`, `owner`, `members[] {id}`          |
 | workspace/get    | GET    | `id`                                                           | `id`, `name`, `description`, `owner`, `members[] {id}`          |
