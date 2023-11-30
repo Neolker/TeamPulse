@@ -1,4 +1,4 @@
-# TeamPulse
+# Teampulse
 ## API Documentation
 
 - **POST** requests pass parameters in JSON format in **Body**, mostly data from forms
