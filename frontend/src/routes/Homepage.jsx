@@ -1,5 +1,4 @@
 import React from 'react'
-import './Homepage.css'
 import LandingHeader from '../components/LandingHeader'
 
 const Homepage = () => {
