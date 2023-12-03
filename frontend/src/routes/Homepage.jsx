@@ -1,15 +1,14 @@
-import React from 'react'
-import LandingHeader from '../components/LandingHeader'
+import React from "react";
+import LandingHeader from "../components/LandingHeader";
+import Jumbotron from "../components/Jumbotron";
+import LandingFooter from "../components/Landingfooter";
 
-const Homepage = () => {
+export default function Homepage() {
   return (
-    <div>
-
-    <LandingHeader />
-
-
-    </div>
-  )
-}
-
-export default Homepage
+    <>
+      <LandingHeader />
+      <Jumbotron />
+      <LandingFooter />
+    </>
+  );
+};
