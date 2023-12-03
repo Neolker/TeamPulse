@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Homepage from './routes/HomePage'
-import Register from './routes/Register'
+import Homepage from './routes/Homepage'
+
 import Login from './routes/Login'
-import Application from './routes/Application'
+import { Register } from './routes/Register'
 
 const App = () => {
   return (
@@ -11,9 +11,9 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/register' element={<Register />} />
+
         <Route path='/login' element={<Login />} />
-        <Route path='/app' element={<Application />} />
+        <Route path='/register' element={<Register/>} />
         <Route path='*' element={<Homepage />} />
       </Routes>
 
