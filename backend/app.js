@@ -20,13 +20,14 @@ app.use(cors())
 
 //jednoduchá definice routy s HTTP metodou GET, která pouze navrací text
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome to TeamPulse! Use the documentation for the API calling.");
 });
 
 app.use("/company", companyRouter);
 app.use("/workspace", workspaceRouter);
 app.use("/task", taskRouter);
 app.use("/user", userRouter);
+
 
 app.get("/*", (req, res) => {
   res.send("Unknown path!");

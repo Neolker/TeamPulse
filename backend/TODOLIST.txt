@@ -1,0 +1,28 @@
+DONE LIST:
+
+1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
+ - Task
+
+TODO LIST:
+
+1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
+ - Company
+ - Workspace
+ - User
+ 
+2) Check přihlášeného uživatele:
+ - přes session, při nepřihlášeném error 401, při přihlášeném nic neřešit
+ - řešit již na úrovni app.js? 
+ - řešit u všech funkcí backendu mimo user/login a user/registration - tyto dvě fce musí mít výjímku
+  
+3) Při vytváření / ukládání / manipulace jakéhokoli obsahu:
+ - checkovat že zadaná ID v systému existují
+ - pokud ID neexistují, vyhodit chybovou hlášku
+
+4) Při mazání objektu s podobjekty - odstranit i všechny podobjekty
+ - při mazání workspace se smažou všechny tasks s id tohoto workspace
+ - při mazání company se smažou všechny workspace a s nimi všechny task zadané company
+ 
+5) JSONy nahradit databází 
+
+
