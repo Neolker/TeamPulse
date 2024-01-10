@@ -2,8 +2,10 @@
 const express = require("express");
 const cors = require("cors");
 
-const recipeRouter = require("./controller/recipe-controller");
-const ingredientRouter = require("./controller/ingredient-controller");
+const companyRouter = require("./controller/company-controller");
+const workspaceRouter = require("./controller/workspace-controller");
+const taskRouter = require("./controller/task-controller");
+const userRouter = require("./controller/user-controller");
 
 //inicializace nového Express.js serveru
 const app = express();
@@ -21,8 +23,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/recipe", recipeRouter);
-app.use("/ingredient", ingredientRouter);
+app.use("/company", companyRouter);
+app.use("/workspace", workspaceRouter);
+app.use("/task", taskRouter);
+app.use("/user", userRouter);
 
 app.get("/*", (req, res) => {
   res.send("Unknown path!");
