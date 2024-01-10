@@ -1,0 +1,13 @@
+[  
+  {
+    "id": "W-1211",
+    "company_id": "C-5847",
+    "name": "Workspace 1",
+    "description": "První workspace",
+    "owner_id": "U-3287",
+    "members":
+    [
+    	"U-1595"
+    ]
+  }
+]

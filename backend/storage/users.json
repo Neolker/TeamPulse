@@ -1,0 +1,32 @@
+[  
+  {
+    "id": "U-1595",
+    "username": "milos.hynek",
+    "firstname": "Miloš",
+    "lastname": "Hynek",
+    "email": "milos.hynek@email.cz",
+    "session": "",
+    "password": "DOPLNIT",
+    "active": "1"
+  },
+  {
+    "id": "U-3287",
+    "username": "neolker",
+    "firstname": "Martin",
+    "lastname": "Wolker",
+    "email": "DOPLNIT",
+    "session": "",
+    "password": "DOPLNIT",
+    "active": "1"
+  },  
+  {
+    "id": "U-2785",
+    "username": "lea",
+    "firstname": "LEA",
+    "lastname": "DOPLNIT",
+    "email": "DOPLNIT",
+    "session": "",
+    "password": "DOPLNIT",
+    "active": "1"
+  }
+]
