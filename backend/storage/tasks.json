@@ -1,0 +1,11 @@
+[  
+  {
+    "id": "T-1548",
+    "workspace_id": "W-1211",
+    "name": "První úkol",
+    "description": "Udělat vše správně.",
+    "solver_id": "U-3287",
+		"status": "0",
+		"deadline": "31.1.2024"
+  }
+]

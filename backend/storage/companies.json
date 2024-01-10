@@ -1,0 +1,34 @@
+[  
+  {
+    "id": "C-5847",
+    "awid": "A-7",
+    "name": "Výběrová společnost a.s.",
+    "description": "Speciální klient.",
+    "owner_id": "U-3287",
+    "users": 
+    	[
+    		{
+    			"user_id": "U-2785", 
+    			"roles": ["0"]
+    		},
+    		{
+    			"user_id": "U-1595", 
+    			"role": ["0","1"]
+    		}
+    	]
+  },
+  {
+    "id": "C-9987",
+    "awid": "A-7",
+    "name": "Nová společnost k.s.",
+    "description": "Test komanditní společnosti",
+    "owner_id": "U-1595",
+    "users": 
+    	[
+    		{	
+    			"user_id": "U-3287", 
+    			"role": ["0","1"]
+    		}
+    	]
+  }  
+]
