@@ -20,11 +20,11 @@
 | workspace/delete    | POST   | `id`                                                                    | `id`, `name`, `description`, `owner`, `members[] {id}`                   |
 | workspace/view      | GET    | -                                                                       | `workspaces[] { id, name, description, owner, members[] {id} }`          |
 |                     |        |                                                                         |                                                                          |
-| task/create         | POST   | `worspaceId`, `name`, `description`, `solver`, `deadline`, `status`     | `worspaceId`,`id`, `name`, `description`, `solver`, `deadline`, `status` |
-| task/get            | GET    | `id`                                                                    | `id`, `name`, `description`, `solver`, `deadline`, `status`              |
-| task/update         | POST   | `id`, `name`, `description`, `solver`, `deadline`, `status`             | `id`, `name`, `description`, `solver`, `deadline`, `status`              |
-| task/delete         | POST   | `id`                                                                    | `id`, `name`                                                             |
-| task/view           | GET    | -                                                                       | `tasks[] { id, name, description, solver, deadline, status}`             |
+| task/create         | POST   | `worspace_id`, `name`, `description`, `solver_id`, `deadline`, `status` | `worspace_id`,`id`, `name`, `description`, `solver_id`, `deadline`, `status`|
+| task/get            | GET    | `id`                                                                    | `worspace_id`,`id`, `name`, `description`, `solver_id`, `deadline`, `status`|
+| task/update         | POST   | `id`,`worspace_id`,`name`,`description`,`solver_id`,`deadline`, `status`| `worspace_id`,`id`, `name`, `description`, `solver_id`, `deadline`, `status`|
+| task/delete         | POST   | `id`                                                                    | `deleted`                                                                |  
+| task/view           | GET    | -                                                                       | `tasks[] {worspace_id,id,name,description, solver_id, deadline, status}` |
 |                     |        |                                                                         |                                                                          |
 | user/registration   | POST   | `firstname`, `lastname`, `email`, `password`                            | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
 | user/get            | GET    | `id`                                                                    | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
