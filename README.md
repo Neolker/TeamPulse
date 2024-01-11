@@ -7,10 +7,10 @@
 
 | URI                 | METHOD | INPUT                                                                   | OUTPUT                                                                   |
 | ------------------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| company/create      | POST   | `name`, `description`, `owner_id`                                       | `awid`, `name`, `description`, `owner_id`, `users[] {id}`                |
-| company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner_id`, `users[] {id}`                |
-| company/update      | POST   | `awid`, `name`, `description`, `owner_id`                               | `awid`, `name`, `description`, `owner_id`, `users[] {id}`                |
-| company/view        | GET    | -                                                                       | `workspaces[] { awid, name, description, owner_id, users[] {id} }`       |
+| company/create      | POST   | `name`, `description`, `owner_id`                                       | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
+| company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
+| company/update      | POST   | `awid`, `name`, `description`, `owner_id`                               | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
+| company/view        | GET    | -                                                                       | `companies[] { awid, name, description, owner_id, users[] {id,roles[]} }`       |
 | company/add-user    | GET    | `awid`, `user_id`, `roles[] `                                            | `added`                                                                  |
 | company/delete-user | GET    | `awid`, `user_id`                                                        | `deleted`                                                                |
 |                     |        |                                                                         |                                                                          |
