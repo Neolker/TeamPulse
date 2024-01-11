@@ -7,12 +7,12 @@
 
 | URI                 | METHOD | INPUT                                                                   | OUTPUT                                                                   |
 | ------------------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| company/create      | POST   | `name`, `description`, `owner_id`                                       | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
-| company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
-| company/update      | POST   | `awid`, `name`, `description`, `owner_id`                               | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`                |
-| company/view        | GET    | -                                                                       | `companies[] { awid, name, description, owner_id, users[] {id,roles[]} }`       |
-| company/add-user    | GET    | `awid`, `user_id`, `roles[] `                                            | `added`                                                                  |
-| company/delete-user | GET    | `awid`, `user_id`                                                        | `deleted`                                                                |
+| company/create      | POST   | `name`, `description`, `owner_id`                                       | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`        |
+| company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`        |
+| company/update      | POST   | `awid`, `name`, `description`, `owner_id`                               | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`        |
+| company/view        | GET    | -                                                                       | `companies[] { awid, name, description, owner_id, users[] {id,roles[]} }`|
+| company/add-user    | GET    | `awid`, `user_id`, `roles[] `                                           | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`        |
+| company/delete-user | GET    | `awid`, `user_id`                                                       | `awid`, `name`, `description`, `owner_id`, `users[] {id,roles[]}`        |
 |                     |        |                                                                         |                                                                          |
 | workspace/create    | POST   | `awid`, `name`, `description`, `owner`, `members[] {id}`                | ` awid`, `id `, `name`, `description`, `owner`, `members[] {id}`         |
 | workspace/get       | GET    | `id`                                                                    | `id`, `name`, `description`, `owner`, `members[] {id}`                   |
