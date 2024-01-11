@@ -11,7 +11,7 @@
 | company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
 | company/update      | POST   | `awid`, `name`, `description`, `owner`, `users[] {id}`                  | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
 | company/view        | GET    | `awid`                                                                  | `workspaces[] { awid, name, description, owner, users[] {id} }`          |
-| company/addUses     | GET    | `awid`, `userId`, `roles`                                               | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
+| company/addUsers    | GET    | `awid`, `userId`, `roles`                                               | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
 | company/deleteUsers | GET    | `awid`, `userId`                                                        | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
 |                     |        |                                                                         |                                                                          |
 | workspace/create    | POST   | `awid`, `name`, `description`, `owner`, `members[] {id}`                | ` awid`, `id `, `name`, `description`, `owner`, `members[] {id}`         |
