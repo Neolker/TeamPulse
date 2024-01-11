@@ -25,7 +25,7 @@ async function UpdateAbl(req, res) {
       task = await dao.updateTask(task);
       res.json(task);
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: id, name and unit are required, minimal lenght: 1 character in the name and 1 character in the unit." });
+      res.status(400).send({ "error": "Validation of the input failed: workspace_id, name, description, solver_id and deadline are required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });

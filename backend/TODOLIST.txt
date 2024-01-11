@@ -2,11 +2,11 @@ DONE LIST:
 
 1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
  - Task
+ - Company 
 
 TODO LIST:
 
 1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
- - Company
  - Workspace
  - User
  
