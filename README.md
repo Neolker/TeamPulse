@@ -7,9 +7,9 @@
 
 | URI                 | METHOD | INPUT                                                                   | OUTPUT                                                                   |
 | ------------------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| company/create      | POST   | `name`, `description`, `owner`, `users[] {id}`                          | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
+| company/create      | POST   | `name`, `description`, `owner`                                          | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
 | company/get         | GET    | `awid`                                                                  | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
-| company/update      | POST   | `awid`, `name`, `description`, `owner`, `users[] {id}`                  | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
+| company/update      | POST   | `awid`, `name`, `description`, `owner`                                  | `awid`, `name`, `description`, `owner`, `users[] {id}`                   |
 | company/view        | GET    | `awid`                                                                  | `workspaces[] { awid, name, description, owner, users[] {id} }`          |
 | company/addUsers    | GET    | `awid`, `userId`, `roles`                                               | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
 | company/deleteUsers | GET    | `awid`, `userId`                                                        | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`  |
