@@ -17,8 +17,8 @@
 | workspace/create    | POST   | `awid`, `name`, `description`, `owner_id`,                              | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
 | workspace/get       | GET    | `id`                                                                    | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
 | workspace/update    | POST   | `id`, `name`, `description`, `owner_id`,                                | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
-| workspace/delete    | POST   | `id`                                                                    | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
-| workspace/view      | GET    | -                                                                       | `workspaces[] { id,`awid`,name, description, owner_id, members[] {id} }` |
+| workspace/delete    | POST   | `id`                                                                    | `deleted`                                                                |
+| workspace/view      | GET    | -                                                                       | `workspaces[] { id,awid,name, description, owner_id, members[] {id} }`   |
 | workspace/add-member    | GET | `id`, `user_id`,                                                       | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
 | workspace/delete-member | GET | `id`, `user_id`                                                        | `id`,`awid`, `name`, `description`, `owner_id`, `members[] {id}`         |
 |                     |        |                                                                         |                                                                          |
