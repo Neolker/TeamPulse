@@ -34,7 +34,7 @@
 | user/create             | POST   | `firstname`, `lastname`, `email`, `password`,`active`,`superadmin`            | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
 | user/get                | GET    | `id`                                                                          | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
 | user/update             | POST   | `id`,`firstname`,`lastname`,`email`,`active`,`superadmin`                     | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
-| user/pwd                | POST   | `id`,`password`                                                               | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
+| user/passwd             | POST   | `id`,`password`                                                               | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
 | user/view               | GET    | -                                                                             | `users[] {id,firstname,lastname,email,session,password,active,superadmin}`    |
 | user/login              | POST   | `email`, `password`                                                           | `session`                                                                     |
 | user/logout             | GET    | -                                                                             | `logouted`                                                                    |
