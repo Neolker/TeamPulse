@@ -1,13 +1,32 @@
-[  
+[
   {
     "id": "W-1211",
-    "company_id": "C-5847",
+    "awid": "C-5847",
     "name": "Workspace 1",
     "description": "První workspace",
     "owner_id": "U-3287",
-    "members":
-    [
-    	"U-1595"
+    "members": [
+      "U-1595"
+    ]
+  },
+  {
+    "id": "W-570be491",
+    "awid": "X-123456",
+    "name": "Nový vesmír",
+    "description": "Objeven voyagerem včera",
+    "owner_id": "U-123456",
+    "members": []
+  },
+  {
+    "id": "W-1234",
+    "awid": "X-5869",
+    "name": "Nový vesmír II",
+    "description": "Objeven voyagerem dnes ráno",
+    "owner_id": "U-45456",
+    "members": [
+      "U-1234",
+      "U-12345",
+      "U-123"
     ]
   }
 ]
