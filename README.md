@@ -37,4 +37,4 @@
 | user/passwd             | POST   | `id`,`password`                                                               | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
 | user/view               | GET    | -                                                                             | `users[] {id,firstname,lastname,email,session,password,active,superadmin}`    |
 | user/login              | POST   | `email`, `password`                                                           | `session`                                                                     |
-| user/logout             | GET    | -                                                                             | `logouted`                                                                    |
+| user/logout             | POST   | `session`                                                                     | `logouted`                                                                    |
