@@ -1,5 +1,8 @@
 # Teampulse
 
+!!! IMPORTANT - BEFORE USE BACKEND USE COMMAND: npm install md5 !!!
+
+
 ## API Documentation
 
 - **POST** requests pass parameters in JSON format in **Body**, mostly data from forms
