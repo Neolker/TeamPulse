@@ -1,32 +1,62 @@
-[  
+[
   {
     "id": "U-1595",
-    "username": "milos.hynek",
     "firstname": "Miloš",
     "lastname": "Hynek",
     "email": "milos.hynek@email.cz",
     "session": "",
-    "password": "DOPLNIT",
-    "active": "1"
+    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
+    "active": "1",
+    "superadmin": "1"
   },
   {
     "id": "U-3287",
-    "username": "neolker",
     "firstname": "Martin",
     "lastname": "Wolker",
     "email": "neolker@gmail.com",
     "session": "",
-    "password": "DOPLNIT",
-    "active": "1"
-  },  
+    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
+    "active": "1",
+    "superadmin": "1"
+  },
   {
     "id": "U-2785",
-    "username": "lea",
     "firstname": "LEA",
     "lastname": "DOPLNIT",
     "email": "DOPLNIT",
     "session": "",
-    "password": "DOPLNIT",
-    "active": "1"
+    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
+    "active": "1",
+    "superadmin": "0"
+  },
+  {
+    "id": "U-9966",
+    "firstname": "neaktivni",
+    "lastname": "uzivatel",
+    "email": "DOPLNIT",
+    "session": "",
+    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
+    "active": "0",
+    "superadmin": "0"
+  },
+  {
+    "id": "U-838b7055",
+    "firstname": "test",
+    "lastname": "test",
+    "email": "test@test.cz",
+    "session": "S-4bf0598517581eb8-TS",
+    "password": "9096381fbf8531a51aa84d159bbfed14",
+    "active": 1,
+    "superadmin": 1
+  },
+  {
+    "id": "U-146a7623",
+    "firstname": "Jára",
+    "lastname": "Cimrman",
+    "email": "lezici@spici.za-peci",
+    "session": "",
+    "password": "fc5a735c4f4d4ce64b81c57c3e9e3e8e",
+    "active": 1,
+    "superadmin": 0
   }
 ]
