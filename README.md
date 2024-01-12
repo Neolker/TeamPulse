@@ -28,9 +28,9 @@
 | task/delete             | POST   | `id`                                                                          | `deleted`                                                                     |
 | task/view               | GET    | -                                                                             | `tasks[] {worspace_id, id, name, description, solver_id, deadline, status}`   |
 |                         |        |                                                                               |                                                                               |
-| user/registration       | POST   | `firstname`, `lastname`, `email`, `password`                                  | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`       |
-| user/get                | GET    | `id`                                                                          | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`       |
-| user/update             | POST   | `id`, `username`, `firstname`, `lastname`, `email`, `password`, `active`      | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`       |
-| user/view               | GET    | -                                                                             | `users[] {id, firstname, lastname, email, superAdmin, roles, active}`         |
-| user/login              | POST   | `email`, `password`                                                           | `id`, `firstname`, `lastname`, `email`, `superAdmin`, `roles`, `active`       |
-| user/logout             | GET    | -                                                                             |                                                                               |
+| user/create             | POST   | `firstname`, `lastname`, `email`, `password`,`active`,`superadmin`            | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
+| user/get                | GET    | `id`                                                                          | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
+| user/update             | POST   | `id`,`username`,`firstname`,`lastname`,`email`,`active`,`superadmin`          | `id`,`firstname`,`lastname`,`email`,`session`,`password`,`active`,`superadmin`|
+| user/view               | GET    | -                                                                             | `users[] {id,firstname,lastname,email,session,password,active,superadmin}`    |
+| user/login              | POST   | `email`, `password`                                                           | `session`                                                                     |
+| user/logout             | GET    | -                                                                             | `logouted`                                                                    |
