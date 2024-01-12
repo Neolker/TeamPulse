@@ -3,12 +3,10 @@ DONE LIST:
 1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
  - Task
  - Company 
-
-TODO LIST:
-
-1) Hlavní routy - sprovoznit: základní funkce v controllers / abls / daos:
  - Workspace
  - User
+
+TODO LIST:
  
 2) Check přihlášeného uživatele:
  - přes session, při nepřihlášeném error 401, při přihlášeném nic neřešit
