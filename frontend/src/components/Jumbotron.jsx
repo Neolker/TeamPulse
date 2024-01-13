@@ -9,11 +9,10 @@ export default function Jumbotron() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+            A <span className={classes.highlight}>modern</span> Project managment <br /> aplication
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+            Build fully functional accessible web applications faster than ever
           </Text>
 
           <List
@@ -27,16 +26,11 @@ export default function Jumbotron() {
             }
           >
             <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks
+              <b>Javascript based</b> – build type safe applications, all components and hooks
               export types
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
-            </List.Item>
-            <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
+              <b>Free and open source</b> – all packages have MIT license.
             </List.Item>
           </List>
 
