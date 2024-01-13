@@ -13,6 +13,15 @@ class CompanyDao {
     this.companyStoragePath = storagePath ? storagePath : DEFAULT_STORAGE_PATH;
   }
 
+	async _createLog(cmd,event){
+		const currentY = new Date().getFullYear();
+		const currentM = new Date().getMonth()+1;
+		const currentTs = new Date().toUTCString();				
+		await fs.appendFileSync( 
+			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".json") , 
+			cmd+" at "+currentTs+"\n"+event+"\n"+"-------"+"\n");		
+	}	
+
   async createCompany(company) {
     let companiesList = await this._loadAllCompanies();
     let companyPrototype = {
@@ -29,12 +38,14 @@ class CompanyDao {
     companyPrototype.owner_id = company.owner_id;        
     companiesList.push(companyPrototype);
     await wf(this._getStorageLocation(), JSON.stringify(companiesList, null, 2));
+    this._createLog("company/create",JSON.stringify(companyPrototype) );
     return companyPrototype;
   }
   
   async getCompany(id) {
    	let companieslist = await this._loadAllCompanies();
     const result = companieslist.find((b) => b.awid === id);
+    this._createLog("company/get",JSON.stringify(result) );
     return result;
   }
 
@@ -59,11 +70,13 @@ class CompanyDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(companiesList, null, 2));
+    this._createLog("company/update",JSON.stringify(companiesList[companyIndex]) );
     return companiesList[companyIndex];
   }
   
   async viewCompanies() {
     let companiesList = await this._loadAllCompanies();
+    this._createLog("company/view",JSON.stringify(companiesList) );
     return companiesList;
   }
   
@@ -93,6 +106,7 @@ class CompanyDao {
       };    	
     }
     await wf(this._getStorageLocation(), JSON.stringify(companiesList, null, 2));
+    this._createLog("company/add-user",JSON.stringify(companiesList[companyIndex]) );
     return companiesList[companyIndex];
   }
 
@@ -121,6 +135,7 @@ class CompanyDao {
       };    	
     }
     await wf(this._getStorageLocation(), JSON.stringify(companiesList, null, 2));
+    this._createLog("company/delete-user",JSON.stringify(companiesList[companyIndex]) );
     return companiesList[companyIndex];
   }
 

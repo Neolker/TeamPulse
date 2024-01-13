@@ -1,0 +1,18 @@
+company/create at Sat, 13 Jan 2024 16:21:56 GMT
+{"awid":"C-d7174e58","name":"test","description":"tet","owner_id":"U-123-123","users":[]}
+-------
+company/get at Sat, 13 Jan 2024 16:22:45 GMT
+{"awid":"C-7","name":"Nová společnost k.s.","description":"Test komanditní společnosti","owner_id":"U-1595","users":[{"user_id":"U-3287","roles":["0","1"]},{"user_id":"testiiik","roles":[]},{"user_id":"testiiik 2","roles":["0","1"]}]}
+-------
+company/update at Sat, 13 Jan 2024 16:23:08 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]}
+-------
+company/view at Sat, 13 Jan 2024 16:25:21 GMT
+[{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]},{"awid":"C-7","name":"Nová společnost k.s.","description":"Test komanditní společnosti","owner_id":"U-1595","users":[{"user_id":"U-3287","roles":["0","1"]},{"user_id":"testiiik","roles":[]},{"user_id":"testiiik 2","roles":["0","1"]}]},{"awid":"C-5721fe6e","name":"1. spol. s.r.o.","description":"Popisek společnosti ","owner_id":"u-58959","users":[]},{"awid":"C-e84d8401","name":"test","description":"tet","owner_id":"U-123-123","users":[]},{"awid":"C-71142100","name":"test","description":"tet","owner_id":"U-123-123","users":[]},{"awid":"C-d7174e58","name":"test","description":"tet","owner_id":"U-123-123","users":[]}]
+-------
+company/add-user at Sat, 13 Jan 2024 16:25:48 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]},{"user_id":"XB499","roles":[]}]}
+-------
+company/delete-user at Sat, 13 Jan 2024 16:26:12 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]}
+-------
