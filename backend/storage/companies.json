@@ -1,9 +1,9 @@
 [
   {
     "awid": "C-8",
-    "name": "Výběrová společnost a.s. -1",
-    "description": "Speciální klient. -2",
-    "owner_id": "U-328711",
+    "name": "Výběrová společnost a.s.",
+    "description": "Speciální klient.",
+    "owner_id": "U-3287",
     "users": [
       {
         "user_id": "U-2785",
@@ -59,6 +59,27 @@
     "name": "1. spol. s.r.o.",
     "description": "Popisek společnosti ",
     "owner_id": "u-58959",
+    "users": []
+  },
+  {
+    "awid": "C-e84d8401",
+    "name": "test",
+    "description": "tet",
+    "owner_id": "U-123-123",
+    "users": []
+  },
+  {
+    "awid": "C-71142100",
+    "name": "test",
+    "description": "tet",
+    "owner_id": "U-123-123",
+    "users": []
+  },
+  {
+    "awid": "C-d7174e58",
+    "name": "test",
+    "description": "tet",
+    "owner_id": "U-123-123",
     "users": []
   }
 ]
