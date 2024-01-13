@@ -18,7 +18,7 @@ class CompanyDao {
 		const currentM = new Date().getMonth()+1;
 		const currentTs = new Date().toUTCString();				
 		await fs.appendFileSync( 
-			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".json") , 
+			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
 			cmd+" at "+currentTs+"\n"+event+"\n"+"-------"+"\n");		
 	}	
 
