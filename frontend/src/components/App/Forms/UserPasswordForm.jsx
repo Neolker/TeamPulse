@@ -1,5 +1,5 @@
 import { useForm } from "@mantine/form";
-import { TextInput, Button, Group, Box } from "@mantine/core";
+import { PasswordInput, Button, Group, Box } from "@mantine/core";
 
 export function UserPasswordForm({ action }) {
   const form = useForm({
@@ -8,17 +8,24 @@ export function UserPasswordForm({ action }) {
     },
 
     validate: {
-      password: (value) => (value.length < 6 ? "Password too short" : null),
+      password: (value) => (value.length < 6 ? "Password should include at least 6 characters" : null),
     },
   });
 
   return (
     <Box style={{ maxWidth: 300 }} mx="auto" mt="xl">
       <form onSubmit={form.onSubmit((values) => action(values))}>
-        <TextInput
+        <PasswordInput
           required
           label="Password"
-          type="password"
+          placeholder="Your password"
+          onChange={(event) =>
+            form.setFieldValue("password", event.currentTarget.value)
+          }
+          error={
+            form.errors.password &&
+            "Password should include at least 6 characters"
+          }
           {...form.getInputProps("password")}
         />
         <Group position="right" mt="md">

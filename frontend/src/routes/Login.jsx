@@ -41,7 +41,7 @@ export default function Login(props) {
     },
   });
 
-  const hadnleLogin = async (values) => {
+  const handleLogin = async (values) => {
     await login(values);
     navigate("/app");
   };
@@ -65,7 +65,7 @@ export default function Login(props) {
 
         <form
           onSubmit={form.onSubmit((values) => {
-            hadnleLogin(values);
+            handleLogin(values);
           })}
         >
           <Stack>
