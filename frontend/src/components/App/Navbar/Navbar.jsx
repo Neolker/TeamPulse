@@ -23,6 +23,7 @@ import { modals } from "@mantine/modals";
 import { useAuth } from "../../AuthContext";
 import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 import AppLogo from "../AppLogo/AppLogo";
+import { useNavigate } from "react-router-dom";
 
 function NavbarLink({ icon: Icon, label, active, onClick }) {
   return (
@@ -39,16 +40,17 @@ function NavbarLink({ icon: Icon, label, active, onClick }) {
 }
 
 const mockdata = [
-  { icon: IconHome2, label: "Home" },
-  { icon: IconGauge, label: "Dashboard" },
-  { icon: IconDeviceDesktopAnalytics, label: "Analytics" },
-  { icon: IconUser, label: "Account" },
-  { icon: IconSettings, label: "Settings" },
+  { icon: IconHome2, label: "Home", link: "/app" },
+  { icon: IconGauge, label: "Dashboard", link: "/dashboard" },
+  { icon: IconDeviceDesktopAnalytics, label: "Analytics", link: "/analytics" },
+  { icon: IconUser, label: "Account", link: "/account" },
+  { icon: IconSettings, label: "Settings", link: "/settings" },
 ];
 
 export default function Navbar() {
   const [active, setActive] = useState(2);
   const { logout } = useAuth();
+  const navigate = useNavigate();
 
   const openLogoutModal = () =>
     modals.openConfirmModal({
@@ -60,6 +62,7 @@ export default function Navbar() {
       onCancel: () => {},
       onConfirm: () => {
         logout();
+        navigate("/")
       },
     });
 
@@ -69,7 +72,10 @@ export default function Navbar() {
       icon={link.icon}
       key={link.label}
       active={index === active}
-      onClick={() => setActive(index)}
+      onClick={() => {
+        setActive(index);
+        navigate(link.link);
+      }}
     />
   ));
 

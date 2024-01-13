@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import AppContainer from "../components/App/AppContainer";
 import { useAuth } from "../components/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { SimpleGrid } from "@mantine/core";

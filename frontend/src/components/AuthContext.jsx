@@ -1,4 +1,5 @@
 import { useState, createContext, useContext, useEffect } from "react";
+import { notifications } from "@mantine/notifications";
 
 export const AuthContext = createContext(null);
 
@@ -8,7 +9,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     const storedUser = sessionStorage.getItem("user");
-    return storedUser ? storedUser : null;
+    return storedUser ? JSON.parse(storedUser) : null;
   });
 
   const login = async (user) => {
@@ -25,12 +26,44 @@ export const AuthProvider = ({ children }) => {
       });
 
       if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
 
-      sessionStorage.setItem("user", data);
-      setUser(sessionStorage.getItem("user"));
+      sessionStorage.setItem("user", JSON.stringify(data));
+      setUser(JSON.parse(sessionStorage.getItem("user")));
+      notifications.show({
+        title: `Welcome in our Team Pulse`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error posting data: ", error);
+    }
+  };
+
+  const loadUser = async (user) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/user/get?id=${user.id}&session=${user.session}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      sessionStorage.setItem("user", JSON.stringify(data));
+      setUser(JSON.parse(sessionStorage.getItem("user")));
     } catch (error) {
       console.error("Error posting data: ", error);
     }
@@ -41,15 +74,15 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  //   useEffect(() => {
-  //     const data = sessionStorage.getItem("user");
-  //     if (data) {
-  //       setUser(data);
-  //     }
-  //   }, []);
+  useEffect(() => {
+    const data = sessionStorage.getItem("user");
+    if (data) {
+      setUser(JSON.parse(data));
+    }
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loadUser }}>
       {children}
     </AuthContext.Provider>
   );
