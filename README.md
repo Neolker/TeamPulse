@@ -22,7 +22,7 @@
 - API server tester (GET/POST):
   - Insomnia - https://insomnia.rest/download
   - Postman - https://www.postman.com/downloads/
-  - Or use smimply these testing pages https://github.com/Neolker/TeamPulse/tree/main/backend/tests
+  - Or use simple testing pages - https://github.com/Neolker/TeamPulse/tree/main/backend/tests
 
 ## Download and start the project
 - Command `git clone https://github.com/Neolker/TeamPulse` or by using the GUI in VSCode
