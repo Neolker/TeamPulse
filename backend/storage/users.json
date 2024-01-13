@@ -68,5 +68,55 @@
     "password": "1bef317e41b92698b126e88ca61d55cb",
     "active": 1,
     "superadmin": 1
+  },
+  {
+    "id": "U-a8450b45",
+    "firstname": "Lea",
+    "lastname": "Belková",
+    "email": "lea.belkova@teampulse.com",
+    "session": "",
+    "password": "9de02bed6259b1a77147666b17bfd9d0",
+    "active": 0,
+    "superadmin": 0
+  },
+  {
+    "id": "U-e6863b44",
+    "firstname": "Miloš",
+    "lastname": "Hynek",
+    "email": "milos.hynek@teampulse.com",
+    "session": "",
+    "password": "26055d82253f8f8ba9662920d8cfd34a",
+    "active": 0,
+    "superadmin": 0
+  },
+  {
+    "id": "U-1b414f26",
+    "firstname": "Marek",
+    "lastname": "Hovančák",
+    "email": "marek.hovancak@teampulse.com",
+    "session": "",
+    "password": "cde532f5b85657b870562ebe89ab04e7",
+    "active": 0,
+    "superadmin": 0
+  },
+  {
+    "id": "U-0f126ac4",
+    "firstname": "Adam",
+    "lastname": "Mácha",
+    "email": "adam.macha@teampulse.com",
+    "session": "",
+    "password": "9e86a498ab066f8ea9937511339d9457",
+    "active": 0,
+    "superadmin": 0
+  },
+  {
+    "id": "U-41a610c4",
+    "firstname": "Martin",
+    "lastname": "Wolker",
+    "email": "martin.wolker@teampulse.com",
+    "session": "",
+    "password": "f28c35646d9c8e904f442e46739de3e4",
+    "active": 0,
+    "superadmin": 0
   }
 ]
