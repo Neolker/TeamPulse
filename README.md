@@ -72,5 +72,5 @@
 | user/update             | POST   | `session`, `id`, `firstname`, `lastname`, `email`, `active`, `superadmin`                | `id`, `firstname`, `lastname`, `email`, `session`, `password`, `active`, `superadmin` |
 | user/passwd             | POST   | `session`, `id`, `password`                                                              | `id`, `firstname`, `lastname`, `email`, `session`, `password`, `active`, `superadmin` |
 | user/view               | GET    | `session`                                                                                | `users[] {id, firstname, lastname, email, session, password, active, superadmin}`     |
-| user/login              | POST   | `email`, `password`                                                                      | `session`                                                                             |
+| user/login              | POST   | `email`, `password`                                                                      | `id`, `firstname`, `lastname`, `email`, `session`, `password`, `active`, `superadmin` |
 | user/logout             | POST   | `session`                                                                                | `logouted`                                                                            |
