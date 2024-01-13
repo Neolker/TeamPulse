@@ -6,9 +6,10 @@ let dao = new CompanyDao(path.join(__dirname, "..", "..", "storage", "companies.
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     awid: { type: "string" },
   },
-  required: ["awid"],
+  required: ["session", "awid"],
 };
 
 async function GetAbl(req, res) {
@@ -24,7 +25,7 @@ async function GetAbl(req, res) {
       }
       res.json(company);
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: awid is required." });
+      res.status(400).send({ "error": "Validation of the input failed: awid and session is required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });

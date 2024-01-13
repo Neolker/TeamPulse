@@ -6,11 +6,12 @@ let dao = new CompanyDao(path.join(__dirname, "..", "..", "storage", "companies.
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     name: { type: "string" },
     description: { type: "string" },
     owner_id: { type: "string" }    
   },
-  required: ["name", "owner_id"]
+  required: ["session", "name", "owner_id"]
 };
 
 async function CreateAbl(req, res) {

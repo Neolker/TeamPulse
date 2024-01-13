@@ -6,6 +6,7 @@ let dao = new TaskDao(path.join(__dirname, "..", "..", "storage", "tasks.json"))
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     workspace_id: { type: "string" },
     name: { type: "string" },
     description: { type: "string" },
@@ -13,7 +14,7 @@ let schema = {
     status: { type: "string" },
     deadline: { type: "string" },  
   },
-  required: ["workspace_id", "name", "description", "solver_id", "deadline"]
+  required: ["session", "workspace_id", "name", "description", "solver_id", "deadline"]
 };
 
 async function CreateAbl(req, res) {

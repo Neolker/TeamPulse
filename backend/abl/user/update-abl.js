@@ -5,14 +5,15 @@ let dao = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"))
 
 let schema = {
   type: "object",
-  properties: {  
+  properties: {
+  	session: { type: "string" },  
     firstname: { type: "string" },
     lastname: { type: "string" },
     email: { type: "string" },
     active: { type: "string" },    
     superadmin: { type: "string" }   
   },
-  required: ["firstname", "lastname", "email"]
+  required: ["session", "firstname", "lastname", "email"]
 };
 
 async function UpdateAbl(req, res) {
@@ -24,7 +25,7 @@ async function UpdateAbl(req, res) {
       data = await dao.updateUser(data);
       res.json(data);
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: firstname, lastname and email are required." });
+      res.status(400).send({ "error": "Validation of the input failed: session, firstname, lastname and email are required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });
