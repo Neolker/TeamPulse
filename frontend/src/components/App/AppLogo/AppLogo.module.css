@@ -1,0 +1,6 @@
+.invert {
+    filter: light-dark(
+      invert(0),
+      invert(1)
+    );
+  }

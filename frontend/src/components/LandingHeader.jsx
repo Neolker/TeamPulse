@@ -31,6 +31,8 @@ import {
 import classes from "./LandingHeader.module.css";
 import logo from "../assets/logo/Logo_dark.svg";
 import { Link } from "react-router-dom";
+import { useAuth } from "../components/AuthContext";
+import { modals } from '@mantine/modals';
 
 const mockdata = [
   {
@@ -66,10 +68,26 @@ const mockdata = [
 ];
 
 export default function LandingHeader() {
+  const { user, logout } = useAuth();
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
+
+  const openLogoutModal = () =>
+    modals.openConfirmModal({
+      title: 'Logut',
+      centered: true,
+      children: (
+        <Text size="sm">
+          Are you sure you want to logout ?
+        </Text>
+      ),
+      labels: { confirm: 'Logout', cancel: "No don't logout" },
+      confirmProps: { color: 'red' },
+      onCancel: () => {},
+      onConfirm: () => { logout() },
+    });
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -77,7 +95,7 @@ export default function LandingHeader() {
         <ThemeIcon size={34} variant="default" radius="md">
           <item.icon
             style={{ width: rem(22), height: rem(22) }}
-            color={theme.colors.blue[6]}
+            color={theme.colors.violet[6]}
           />
         </ThemeIcon>
         <div>
@@ -101,9 +119,6 @@ export default function LandingHeader() {
             <a href="#" className={classes.link}>
               Home
             </a>
-            <a href="/app" className={classes.link}>
-              App
-            </a>
             <HoverCard
               width={600}
               position="bottom"
@@ -119,7 +134,7 @@ export default function LandingHeader() {
                     </Box>
                     <IconChevronDown
                       style={{ width: rem(16), height: rem(16) }}
-                      color={theme.colors.blue[6]}
+                      color={theme.colors.violet[6]}
                     />
                   </Center>
                 </a>
@@ -163,12 +178,25 @@ export default function LandingHeader() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Link to="/login">
-              <Button variant="default">Log in</Button>
-            </Link>
-            <Link to="/register">
-              <Button>Sign up</Button>
-            </Link>
+            {user ? (
+              <>
+                <Link to="/app">
+                  <Button variant="default">App</Button>
+                </Link>
+                <Button variant="light" color="red" onClick={openLogoutModal}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="default">Log in</Button>
+                </Link>
+                <Link to="/register">
+                  <Button>Sign up</Button>
+                </Link>
+              </>
+            )}
           </Group>
 
           <Burger
@@ -216,8 +244,25 @@ export default function LandingHeader() {
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            {user ? (
+              <>
+                <Link to="/app">
+                  <Button variant="default">App</Button>
+                </Link>
+                <Button variant="light" color="red" onClick={openLogoutModal}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="default">Log in</Button>
+                </Link>
+                <Link to="/register">
+                  <Button>Sign up</Button>
+                </Link>
+              </>
+            )}
           </Group>
         </ScrollArea>
       </Drawer>
