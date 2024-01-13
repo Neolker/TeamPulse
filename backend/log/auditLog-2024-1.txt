@@ -1,0 +1,33 @@
+company/create at Sat, 13 Jan 2024 16:21:56 GMT
+{"awid":"C-d7174e58","name":"test","description":"tet","owner_id":"U-123-123","users":[]}
+-------
+company/get at Sat, 13 Jan 2024 16:22:45 GMT
+{"awid":"C-7","name":"Nová společnost k.s.","description":"Test komanditní společnosti","owner_id":"U-1595","users":[{"user_id":"U-3287","roles":["0","1"]},{"user_id":"testiiik","roles":[]},{"user_id":"testiiik 2","roles":["0","1"]}]}
+-------
+company/update at Sat, 13 Jan 2024 16:23:08 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]}
+-------
+company/view at Sat, 13 Jan 2024 16:25:21 GMT
+[{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]},{"awid":"C-7","name":"Nová společnost k.s.","description":"Test komanditní společnosti","owner_id":"U-1595","users":[{"user_id":"U-3287","roles":["0","1"]},{"user_id":"testiiik","roles":[]},{"user_id":"testiiik 2","roles":["0","1"]}]},{"awid":"C-5721fe6e","name":"1. spol. s.r.o.","description":"Popisek společnosti ","owner_id":"u-58959","users":[]},{"awid":"C-e84d8401","name":"test","description":"tet","owner_id":"U-123-123","users":[]},{"awid":"C-71142100","name":"test","description":"tet","owner_id":"U-123-123","users":[]},{"awid":"C-d7174e58","name":"test","description":"tet","owner_id":"U-123-123","users":[]}]
+-------
+company/add-user at Sat, 13 Jan 2024 16:25:48 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]},{"user_id":"XB499","roles":[]}]}
+-------
+company/delete-user at Sat, 13 Jan 2024 16:26:12 GMT
+{"awid":"C-8","name":"Výběrová společnost a.s.","description":"Speciální klient.","owner_id":"U-3287","users":[{"user_id":"U-2785","roles":["0"]},{"user_id":"U-1595","roles":["0","1"]},{"user_id":"test","roles":["1","2","3"]}]}
+-------
+task/create at Sat, 13 Jan 2024 16:34:22 GMT
+{"id":"T-a4bf8b32","workspace_id":"w-test","name":"aaaa","description":"bbbb","solver_id":"cc-cc-cc","status":"dddd","deadline":"1.1.2030"}
+-------
+task/get at Sat, 13 Jan 2024 16:34:43 GMT
+{"id":"T-a4bf8b32","workspace_id":"w-test","name":"aaaa","description":"bbbb","solver_id":"cc-cc-cc","status":"dddd","deadline":"1.1.2030"}
+-------
+task/view at Sat, 13 Jan 2024 16:34:47 GMT
+[{"id":"T-1548","workspace_id":"W-1211","name":"První úkol","description":"Udělat vše správně.","solver_id":"U-3287","status":"0","deadline":"31.1.2024"},{"id":"T-eb7df715","workspace_id":"W-1111","name":"test","description":"test","solver_id":"U-2222","status":"99","deadline":"31.1.2024"},{"id":"xxxx","workspace_id":"xxxx","name":"xxxx","description":"xxx","solver_id":"U-xxx","status":"xxx","deadline":"31.1.xxxx"},{"id":"T-ac11d21d","workspace_id":"w-test","name":"aaaa","description":"bbbb","solver_id":"cc-cc-cc","status":"dddd","deadline":"1.1.2030"},{"id":"T-a4bf8b32","workspace_id":"w-test","name":"aaaa","description":"bbbb","solver_id":"cc-cc-cc","status":"dddd","deadline":"1.1.2030"}]
+-------
+task/update at Sat, 13 Jan 2024 16:35:12 GMT
+{"id":"T-a4bf8b32","workspace_id":"W-1211","name":"První úkol - update","description":"Udělat vše správně.","solver_id":"U-3287","status":"0","deadline":"31.1.2024"}
+-------
+task/delete at Sat, 13 Jan 2024 16:35:41 GMT
+"T-a4bf8b32"
+-------

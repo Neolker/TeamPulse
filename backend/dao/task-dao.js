@@ -12,6 +12,15 @@ class TaskDao {
   constructor(storagePath) {
     this.taskStoragePath = storagePath ? storagePath : DEFAULT_STORAGE_PATH;
   }
+  
+  async _createLog(cmd,event){
+		const currentY = new Date().getFullYear();
+		const currentM = new Date().getMonth()+1;
+		const currentTs = new Date().toUTCString();				
+		await fs.appendFileSync( 
+			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
+			cmd+" at "+currentTs+"\n"+event+"\n"+"-------"+"\n");		
+	}	
 
   async createTask(task) {
     let taskslist = await this._loadAllTasks();
@@ -34,21 +43,23 @@ class TaskDao {
     taskPrototype.description = task.description;
     taskPrototype.solver_id = task.solver_id;
     taskPrototype.status = task.status;
-    taskPrototype.deadline = task.deadline;
-    
+    taskPrototype.deadline = task.deadline;    
     taskslist.push(taskPrototype);
     await wf(this._getStorageLocation(), JSON.stringify(taskslist, null, 2));
+    this._createLog("task/create",JSON.stringify(taskPrototype) );
     return taskPrototype;
   }
   
   async getTask(id) {
    	let taskslist = await this._loadAllTasks();
     const result = taskslist.find((b) => b.id === id);
+    this._createLog("task/get",JSON.stringify(result) );
     return result;
   }
 
   async viewTasks() {
     let taskslist = await this._loadAllTasks();
+    this._createLog("task/view",JSON.stringify(taskslist) );
     return taskslist;
   }
   
@@ -79,6 +90,7 @@ class TaskDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(taskslist, null, 2));
+    this._createLog("task/update",JSON.stringify(taskslist[taskIndex]) );
     return taskslist[taskIndex];
   }
 
@@ -87,7 +99,8 @@ class TaskDao {
     const taskIndex = taskslist.findIndex((b) => b.id === id);
     if (taskIndex >= 0) {    
       taskslist.splice(taskIndex, 1);
-      await wf(this._getStorageLocation(), JSON.stringify(taskslist, null, 2));     
+      await wf(this._getStorageLocation(), JSON.stringify(taskslist, null, 2));   
+      this._createLog("task/delete",JSON.stringify(id) );  
     } else {
       throw new Error("Task id " + id + " is not found.");
     }
