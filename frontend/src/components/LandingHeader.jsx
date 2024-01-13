@@ -93,13 +93,16 @@ export default function LandingHeader() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box pb={20}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Image src={logo} alt="TeamPulse Logo" height={35} />
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
+            </a>
+            <a href="/app" className={classes.link}>
+              App
             </a>
             <HoverCard
               width={600}
