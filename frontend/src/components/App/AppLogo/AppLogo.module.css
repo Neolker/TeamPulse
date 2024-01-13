@@ -1,6 +1,7 @@
 .invert {
-    filter: light-dark(
-      invert(0),
-      invert(1)
-    );
-  }
+  filter: light-dark(
+    invert(16%) sepia(49%) saturate(4%) hue-rotate(316deg) brightness(101%)
+      contrast(92%),
+    invert(0)
+  );
+}
