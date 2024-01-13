@@ -52,3 +52,24 @@ workspace/delete-member at Sat, 13 Jan 2024 17:02:11 GMT
 workspace/delete at Sat, 13 Jan 2024 17:02:57 GMT
 "W-0fd80125"
 -------
+user/view at Sat, 13 Jan 2024 17:11:26 GMT
+[{"id":"U-1595","firstname":"Miloš","lastname":"Hynek","email":"milos.hynek@email.cz","session":"","password":"955db0b81ef1989b4a4dfeae8061a9a6","active":"1","superadmin":"1"},{"id":"U-3287","firstname":"Martin","lastname":"Wolker","email":"neolker@gmail.com","session":"","password":"955db0b81ef1989b4a4dfeae8061a9a6","active":"1","superadmin":"1"},{"id":"U-2785","firstname":"LEA","lastname":"DOPLNIT","email":"DOPLNIT","session":"","password":"955db0b81ef1989b4a4dfeae8061a9a6","active":"1","superadmin":"0"},{"id":"U-9966","firstname":"neaktivni","lastname":"uzivatel","email":"DOPLNIT","session":"","password":"955db0b81ef1989b4a4dfeae8061a9a6","active":"0","superadmin":"0"},{"id":"U-838b7055","firstname":"test","lastname":"test","email":"test@test.cz","session":"S-4bf0598517581eb8-TS","password":"9096381fbf8531a51aa84d159bbfed14","active":1,"superadmin":1},{"id":"U-146a7623","firstname":"Jára","lastname":"Cimrman","email":"lezici@spici.za-peci","session":"","password":"fc5a735c4f4d4ce64b81c57c3e9e3e8e","active":1,"superadmin":0},{"id":"U-356c3426","firstname":"team","lastname":"pulse","email":"admin@teampulse.com","session":"S-7d5a7c6dd0dec846-TS","password":"1bef317e41b92698b126e88ca61d55cb","active":1,"superadmin":1},{"id":"U-a8450b45","firstname":"Lea","lastname":"Belková","email":"lea.belkova@teampulse.com","session":"","password":"9de02bed6259b1a77147666b17bfd9d0","active":0,"superadmin":0},{"id":"U-e6863b44","firstname":"Miloš","lastname":"Hynek","email":"milos.hynek@teampulse.com","session":"S-e60256dfce88fa78-TS","password":"26055d82253f8f8ba9662920d8cfd34a","active":0,"superadmin":0},{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"","password":"cde532f5b85657b870562ebe89ab04e7","active":0,"superadmin":0},{"id":"U-0f126ac4","firstname":"Adam","lastname":"Mácha","email":"adam.macha@teampulse.com","session":"","password":"9e86a498ab066f8ea9937511339d9457","active":0,"superadmin":0},{"id":"U-41a610c4","firstname":"Martin","lastname":"Wolker","email":"martin.wolker@teampulse.com","session":"","password":"f28c35646d9c8e904f442e46739de3e4","active":0,"superadmin":0}]
+-------
+user/get at Sat, 13 Jan 2024 17:11:50 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"","password":"cde532f5b85657b870562ebe89ab04e7","active":0,"superadmin":0}
+-------
+user/create at Sat, 13 Jan 2024 17:12:43 GMT
+{"id":"U-dd1b5cbb","firstname":"xxxx","lastname":"xxxx","email":"x@x.xx","session":"","password":"849d90f3f767f1bb0fb5b554a0f5ab69","active":null,"superadmin":null}
+-------
+user/update at Sat, 13 Jan 2024 17:13:06 GMT
+{"id":"U-dd1b5cbb","firstname":"Jára","lastname":"Cimrman","email":"lezici@spici.za-peci","session":"","password":"849d90f3f767f1bb0fb5b554a0f5ab69","active":null,"superadmin":null}
+-------
+user/login at Sat, 13 Jan 2024 17:14:07 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"S-1f78074839ea9447-TS","password":"cde532f5b85657b870562ebe89ab04e7","active":0,"superadmin":0}
+-------
+user/logout at Sat, 13 Jan 2024 17:14:31 GMT
+{"logouted":true}
+-------
+user/passwd at Sat, 13 Jan 2024 17:14:57 GMT
+{"id":"U-1595","firstname":"Miloš","lastname":"Hynek","email":"milos.hynek@email.cz","session":"","password":"69bacebaa0bc7ddbe9ecaaf1710b7334","active":"1","superadmin":"1"}
+-------
