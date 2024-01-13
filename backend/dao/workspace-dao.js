@@ -12,6 +12,15 @@ class WorkspaceDao {
   constructor(storagePath) {
     this.workspaceStoragePath = storagePath ? storagePath : DEFAULT_STORAGE_PATH;
   }
+  
+  async _createLog(cmd,event){
+		const currentY = new Date().getFullYear();
+		const currentM = new Date().getMonth()+1;
+		const currentTs = new Date().toUTCString();				
+		await fs.appendFileSync( 
+			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
+			cmd+" at "+currentTs+"\n"+event+"\n"+"-------"+"\n");		
+	}	
 
   async createWorkspace(ws) {
     let workspaceslist = await this._loadAllWorkspaces();
@@ -32,12 +41,14 @@ class WorkspaceDao {
     wsPrototype.owner_id = ws.owner_id;        
     workspaceslist.push(wsPrototype);
     await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));
+    this._createLog("workspace/create",JSON.stringify(wsPrototype) );
     return wsPrototype;
   }
   
   async getWorkspace(id) {
    	let workspaceslist = await this._loadAllWorkspaces();
     const result = workspaceslist.find((b) => b.id === id);
+    this._createLog("workspace/get",JSON.stringify(result) );
     return result;
   }
   
@@ -59,6 +70,7 @@ class WorkspaceDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));
+    this._createLog("workspace/update",JSON.stringify(workspaceslist[wsIndex]) );
     return workspaceslist[wsIndex];
   }
   
@@ -67,7 +79,8 @@ class WorkspaceDao {
     const index = workspaceslist.findIndex((b) => b.id === id);
     if (index >= 0) {    
       workspaceslist.splice(index, 1);
-      await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));     
+      await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));    
+      this._createLog("workspace/delete",JSON.stringify(id) );   
     } else {
       throw new Error("Workspace id " + id + " is not found.");
     }
@@ -76,6 +89,7 @@ class WorkspaceDao {
   
   async viewWorkspaces() {
     let workspaceslist = await this._loadAllWorkspaces();
+    this._createLog("workspace/view",JSON.stringify(workspaceslist) );
     return workspaceslist;
   }
   
@@ -94,6 +108,7 @@ class WorkspaceDao {
       };    	
     }
     await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));
+    this._createLog("workspace/add-member",JSON.stringify(workspaceslist[wsIndex]) );
     return workspaceslist[wsIndex];
   }
   
@@ -122,6 +137,7 @@ class WorkspaceDao {
       };    	
     }
     await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));
+    this._createLog("workspace/delete-member",JSON.stringify(workspaceslist[wsIndex]) );
     return workspaceslist[wsIndex];
   }
   
