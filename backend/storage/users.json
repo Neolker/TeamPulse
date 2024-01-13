@@ -5,7 +5,7 @@
     "lastname": "Hynek",
     "email": "milos.hynek@email.cz",
     "session": "",
-    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
+    "password": "69bacebaa0bc7ddbe9ecaaf1710b7334",
     "active": "1",
     "superadmin": "1"
   },
@@ -118,5 +118,15 @@
     "password": "f28c35646d9c8e904f442e46739de3e4",
     "active": 0,
     "superadmin": 0
+  },
+  {
+    "id": "U-dd1b5cbb",
+    "firstname": "Jára",
+    "lastname": "Cimrman",
+    "email": "lezici@spici.za-peci",
+    "session": "",
+    "password": "849d90f3f767f1bb0fb5b554a0f5ab69",
+    "active": null,
+    "superadmin": null
   }
 ]

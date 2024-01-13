@@ -14,6 +14,15 @@ class UserDao {
     this.userStoragePath = storagePath ? storagePath : DEFAULT_STORAGE_PATH;
   }
 
+	async _createLog(cmd,event){
+		const currentY = new Date().getFullYear();
+		const currentM = new Date().getMonth()+1;
+		const currentTs = new Date().toUTCString();				
+		await fs.appendFileSync( 
+			path.join(__dirname, "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
+			cmd+" at "+currentTs+"\n"+event+"\n"+"-------"+"\n");		
+	}	
+	
   async createUser(u) {
     let userslist = await this._loadAllUsers();
     let uPrototype = {
@@ -39,17 +48,20 @@ class UserDao {
     uPrototype.superadmin = parseInt(u.superadmin);                
     userslist.push(uPrototype);
     await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
+    this._createLog("user/create",JSON.stringify(uPrototype) );
     return uPrototype;
   }
   
   async getUser(id) {
    	let userslist = await this._loadAllUsers();
     const result = userslist.find((b) => b.id === id);
+    this._createLog("user/get",JSON.stringify(result) );
     return result;
   }
   
   async viewUsers() {
     let userslist = await this._loadAllUsers();
+    this._createLog("user/view",JSON.stringify(userslist) );
     return userslist;
   }
   
@@ -74,6 +86,7 @@ class UserDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
+    this._createLog("user/update",JSON.stringify(userslist[userIndex]) );
     return userslist[userIndex];
   }
   
@@ -92,6 +105,7 @@ class UserDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
+    this._createLog("user/passwd",JSON.stringify(userslist[userIndex]) );
     return userslist[userIndex];
   }
   
@@ -112,6 +126,7 @@ class UserDao {
       };
     }
   	await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
+  	this._createLog("user/login",JSON.stringify(userslist[userIndex]));
     return userslist[userIndex];
   }
   
@@ -129,6 +144,7 @@ class UserDao {
       };
     }
     await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
+    this._createLog("user/logout","{\"logouted\":true}");
     return {"logouted":true};
   }
   
