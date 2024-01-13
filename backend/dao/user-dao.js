@@ -112,7 +112,7 @@ class UserDao {
       };
     }
   	await wf(this._getStorageLocation(), JSON.stringify(userslist, null, 2));
-    return {"session":session};
+    return userslist[userIndex];
   }
   
   async logoutUser(data) {
@@ -155,4 +155,4 @@ class UserDao {
   }
 }
 
-module.exports = UserDao;
+module.exports = UserDao;;
