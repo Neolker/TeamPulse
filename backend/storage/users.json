@@ -58,5 +58,15 @@
     "password": "fc5a735c4f4d4ce64b81c57c3e9e3e8e",
     "active": 1,
     "superadmin": 0
+  },
+  {
+    "id": "U-356c3426",
+    "firstname": "team",
+    "lastname": "pulse",
+    "email": "admin@teampulse.com",
+    "session": "S-7d5a7c6dd0dec846-TS",
+    "password": "1bef317e41b92698b126e88ca61d55cb",
+    "active": 1,
+    "superadmin": 1
   }
 ]
