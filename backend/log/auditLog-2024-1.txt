@@ -31,3 +31,24 @@ task/update at Sat, 13 Jan 2024 16:35:12 GMT
 task/delete at Sat, 13 Jan 2024 16:35:41 GMT
 "T-a4bf8b32"
 -------
+workspace/create at Sat, 13 Jan 2024 16:57:40 GMT
+{"id":"W-0fd80125","awid":"x-5959","name":"aaa","description":"bbb","owner_id":"cc-ccc-cc","members":[]}
+-------
+workspace/get at Sat, 13 Jan 2024 16:59:02 GMT
+{"id":"W-0fd80125","awid":"x-5959","name":"aaa","description":"bbb","owner_id":"cc-ccc-cc","members":[]}
+-------
+workspace/update at Sat, 13 Jan 2024 16:59:55 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":[]}
+-------
+workspace/view at Sat, 13 Jan 2024 17:00:44 GMT
+[{"id":"W-1211","awid":"C-5847","name":"Workspace 1","description":"První workspace","owner_id":"U-3287","members":["U-1595"]},{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":[]},{"id":"W-1234","awid":"X-5869","name":"Nový vesmír II","description":"Objeven voyagerem dnes ráno","owner_id":"U-45456","members":["U-1234","U-12345","U-123"]},{"id":"W-0fd80125","awid":"x-5959","name":"aaa","description":"bbb","owner_id":"cc-ccc-cc","members":[]}]
+-------
+workspace/add-member at Sat, 13 Jan 2024 17:02:00 GMT
+{"id":"W-0fd80125","awid":"x-5959","name":"aaa","description":"bbb","owner_id":"cc-ccc-cc","members":["sdfsdfsfsdf"]}
+-------
+workspace/delete-member at Sat, 13 Jan 2024 17:02:11 GMT
+{"id":"W-0fd80125","awid":"x-5959","name":"aaa","description":"bbb","owner_id":"cc-ccc-cc","members":[]}
+-------
+workspace/delete at Sat, 13 Jan 2024 17:02:57 GMT
+"W-0fd80125"
+-------
