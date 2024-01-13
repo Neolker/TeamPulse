@@ -7,7 +7,7 @@
   - [Business Request](https://uuapp.plus4u.net/uu-bookkit-maing01/ce654e591da546fabe9f39e68670fb87/book) book (User Stories, Visions, etc.)
   - [Business Model](https://uuapp.plus4u.net/uu-bookkit-maing01/8c657f0dd6dd4278bfb6924afe55e049/book) book (Actors, Use Cases, etc.)
   - [Application Model](https://uuapp.plus4u.net/uu-bookkit-maing01/eeb83176237f4ec29040befc16fa05fa/book) book (Route, Schema, etc.)
-  - [uuSprintMan](https://uuapp.plus4u.net/uu-sprintman-maing01/1cc56c23ce5448c08d32ca7d490f26ab/sprint/current) project management (Backlog, Tasks, etc.)
+- [uuSprintMan](https://uuapp.plus4u.net/uu-sprintman-maing01/1cc56c23ce5448c08d32ca7d490f26ab/sprint/current) project management (Backlog, Tasks, etc.)
 
 - Case study **uuJokes**:
   - [uuJokes](https://uuapp.plus4u.net/uu-jokes-maing01/4ef6a7b01b5942ecbfb925b249af987f/jokes) - Link to the app
