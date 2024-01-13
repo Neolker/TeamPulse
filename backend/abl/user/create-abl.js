@@ -6,6 +6,7 @@ let dao = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"))
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     firstname: { type: "string" },
     lastname: { type: "string" },
     email: { type: "string" },
@@ -13,7 +14,7 @@ let schema = {
     active: { type: "string" },    
     superadmin: { type: "string" }        
   },
-  required: ["firstname", "lastname", "email", "password"]
+  required: ["session", "firstname", "lastname", "email", "password"]
 };
 
 async function CreateAbl(req, res) {

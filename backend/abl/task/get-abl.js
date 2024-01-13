@@ -6,9 +6,10 @@ let dao = new TaskDao(path.join(__dirname, "..", "..", "storage", "tasks.json"))
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     id: { type: "string" },
   },
-  required: ["id"],
+  required: ["session", "id"],
 };
 
 async function GetAbl(req, res) {
@@ -24,7 +25,7 @@ async function GetAbl(req, res) {
       }
       res.json(task);
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: id is required." });
+      res.status(400).send({ "error": "Validation of the input failed: session and id is required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });

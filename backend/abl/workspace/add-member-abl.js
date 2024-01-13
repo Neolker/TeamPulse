@@ -6,10 +6,11 @@ let dao = new WorkspaceDao(path.join(__dirname, "..", "..", "storage", "workspac
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     id: { type: "string" },
     user_id: { type: "string" }    
   },
-  required: ["id", "user_id"]
+  required: ["session", "id", "user_id"]
 };
 
 async function AddMemberAbl(req, res) {

@@ -6,9 +6,10 @@ let dao = new WorkspaceDao(path.join(__dirname, "..", "..", "storage", "workspac
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     id: { type: "string" },
   },
-  required: ["id"],
+  required: ["session", "id"],
 };
 
 async function DeleteAbl(req, res) {
@@ -20,7 +21,7 @@ async function DeleteAbl(req, res) {
       await dao.deleteWorkspace(id);
       res.json({"deleted":true});
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: id is required." });
+      res.status(400).send({ "error": "Validation of the input failed: id and session is required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });

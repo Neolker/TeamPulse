@@ -6,11 +6,12 @@ let dao = new CompanyDao(path.join(__dirname, "..", "..", "storage", "companies.
 let schema = {
   type: "object",
   properties: {  
+  	session: { type: "string" },
     name: { type: "string" },
     description: { type: "string" },
     owner_id: { type: "string" }    
   },
-  required: ["name", "owner_id"]
+  required: ["session", "name", "owner_id"]
 };
 
 async function UpdateAbl(req, res) {
@@ -22,7 +23,7 @@ async function UpdateAbl(req, res) {
       task = await dao.updateCompany(task);
       res.json(task);
     } else {
-      res.status(400).send({ "error": "Validation of the input failed: name and owner_id are required." });
+      res.status(400).send({ "error": "Validation of the input failed: name, session and owner_id are required." });
     }
   } catch (e) {
     res.status(500).send({ "error": e.message });

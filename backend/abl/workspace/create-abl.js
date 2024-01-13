@@ -6,12 +6,13 @@ let dao = new WorkspaceDao(path.join(__dirname, "..", "..", "storage", "workspac
 let schema = {
   type: "object",
   properties: {
+  	session: { type: "string" },
     awid: { type: "string" },
     name: { type: "string" },
     description: { type: "string" },
     owner_id: { type: "string" }    
   },
-  required: ["awid", "name", "owner_id"]
+  required: ["session", "awid", "name", "owner_id"]
 };
 
 async function CreateAbl(req, res) {

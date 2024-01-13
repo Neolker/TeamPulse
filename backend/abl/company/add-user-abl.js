@@ -6,11 +6,12 @@ let dao = new CompanyDao(path.join(__dirname, "..", "..", "storage", "companies.
 let schema = {
   type: "object",
   properties: {
+    session: { type: "string" },
     awid: { type: "string" },
     user_id: { type: "string" },
     roles: { type: "array" }    
   },
-  required: ["awid", "user_id"]
+  required: ["session", "awid", "user_id"]
 };
 
 async function AddUserAbl(req, res) {
