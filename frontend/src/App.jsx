@@ -8,6 +8,7 @@ import AppContainer from "./components/App/AppContainer.jsx";
 import Account from "./routes/Account.jsx";
 import Analytics from "./routes/Analytics.jsx";
 import Settings from "./routes/Settings.jsx";
+import Company from "./routes/Company.jsx";
 
 const App = () => {
   return (
@@ -24,6 +25,14 @@ const App = () => {
           }
         />
         <Route
+          path="/company/:awid"
+          element={
+            <AppContainer>
+              <Company />
+            </AppContainer>
+          }
+        />
+        <Route
           path="/account"
           element={
             <AppContainer>
@@ -32,7 +41,7 @@ const App = () => {
           }
         />
         <Route
-          path="/analytics"
+          path="/analytics" 
           element={
             <AppContainer>
               <Analytics />
@@ -40,7 +49,7 @@ const App = () => {
           }
         />
         <Route
-          path="/settings"
+          path="/settings/:awid?"
           element={
             <AppContainer>
               <Settings />

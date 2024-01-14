@@ -89,12 +89,12 @@ export default function Account() {
   return (
     <>
       <Container>
-        <Title order={1} p="md">
+        <Title order={1} p="md" >
           Account
         </Title>
         <SimpleGrid cols={1}>
           <Paper shadow="xs" radius="md" withBorder p="xl">
-            <Title order={3}>Update your details</Title>
+            <Title order={3} mb="md">Update your details</Title>
             <UserDetailsForm
               user={user}
               action={(values) => handleUserUpdate(values)}

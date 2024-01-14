@@ -1,6 +1,7 @@
+import { Container, Title } from "@mantine/core";
 import { useEffect } from "react";
-import { useAuth } from "../components/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../components/AuthContext";
 
 export default function Analytics() {
   const { user } = useAuth();
@@ -13,5 +14,13 @@ export default function Analytics() {
     }
   }, [user, navigate]);
 
-  return <>Analytics</>;
+  return (
+    <>
+      <Container>
+        <Title order={1} p="md">
+          Analytics
+        </Title>
+      </Container>
+    </>
+  );
 }

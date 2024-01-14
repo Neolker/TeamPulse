@@ -17,7 +17,7 @@ export function UserDetailsForm({ user, action }) {
   });
 
   return (
-    <Box style={{ maxWidth: 300 }} mx="auto">
+    <Box style={{ maxWidth: 400 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => action(values))}>
         <TextInput
           required
