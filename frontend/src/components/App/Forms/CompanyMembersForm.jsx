@@ -16,6 +16,7 @@ import { isNotEmpty, useForm } from "@mantine/form";
 import { modals } from "@mantine/modals";
 import { IconTrash } from "@tabler/icons-react";
 import { useMemo, useState } from "react";
+import UserCreateModal from "./UserCreateModal";
 
 function UsersTable({ data }) {
   const rows = data.map((item) => (
@@ -147,6 +148,9 @@ export function CompanyMembersForm({
   }
   return (
     <>
+      <Group justify="flex-end">
+        <UserCreateModal />
+      </Group>
       <Box style={{ maxWidth: 600 }} mx="auto">
         <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
           <MultiSelect
@@ -166,16 +170,16 @@ export function CompanyMembersForm({
             placeholder="Select a role"
             error={form.errors.role}
           />
-          <Group position="right" mt="md">
+          <Group position="right" mt="md" justify="space-between">
             <Button type="submit">Add Member</Button>
           </Group>
         </form>
       </Box>
+
       <Box mt="lg">
         {selectedUsers.length !== 0 ? (
           <UsersTable
             data={selectedUsers.map((user, index) => {
-
               return {
                 name:
                   allUsers.find((u) => u.id === user.user_id)?.firstname +

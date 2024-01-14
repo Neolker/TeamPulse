@@ -8,7 +8,7 @@ import {
   ActionIcon,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { IconSettings } from "@tabler/icons-react";
+import { IconSettings, IconUsersGroup } from "@tabler/icons-react";
 
 const avatars = [
   "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
@@ -39,20 +39,22 @@ export default function TaskCard({ company, hasPriviliges }) {
         )}
         <Group>
           {hasPriviliges && (
-            <Link to={"/settings/" + company.awid}>
-              <ActionIcon
-                variant="filled"
-                size="lg"
-                radius="md"
-                color="gray"
-                aria-label="Settings"
-              >
-                <IconSettings
-                  style={{ width: "70%", height: "70%" }}
-                  stroke={1.5}
-                />
-              </ActionIcon>
-            </Link>
+            <>
+              <Link to={"/settings/" + company.awid}>
+                <ActionIcon
+                  variant="filled"
+                  size="lg"
+                  radius="md"
+                  color="gray"
+                  aria-label="Settings"
+                >
+                  <IconSettings
+                    style={{ width: "70%", height: "70%" }}
+                    stroke={1.5}
+                  />
+                </ActionIcon>
+              </Link>
+            </>
           )}
           <Link to={"/company/" + company.awid}>
             <Button radius="md">Show details</Button>
