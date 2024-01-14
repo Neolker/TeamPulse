@@ -32,7 +32,7 @@ import classes from "./LandingHeader.module.css";
 import logo from "../assets/logo/Logo_dark.svg";
 import { Link } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
-import { modals } from '@mantine/modals';
+import { modals } from "@mantine/modals";
 
 const mockdata = [
   {
@@ -76,17 +76,15 @@ export default function LandingHeader() {
 
   const openLogoutModal = () =>
     modals.openConfirmModal({
-      title: 'Logut',
+      title: "Logut",
       centered: true,
-      children: (
-        <Text size="sm">
-          Are you sure you want to logout ?
-        </Text>
-      ),
-      labels: { confirm: 'Logout', cancel: "No don't logout" },
-      confirmProps: { color: 'red' },
+      children: <Text size="sm">Are you sure you want to logout ?</Text>,
+      labels: { confirm: "Logout", cancel: "No don't logout" },
+      confirmProps: { color: "red" },
       onCancel: () => {},
-      onConfirm: () => { logout() },
+      onConfirm: () => {
+        logout();
+      },
     });
 
   const links = mockdata.map((item) => (
@@ -180,10 +178,17 @@ export default function LandingHeader() {
           <Group visibleFrom="sm">
             {user ? (
               <>
-                <Link to="/app">
-                  <Button variant="default">App</Button>
-                </Link>
-                <Button variant="light" color="red" onClick={openLogoutModal}>
+                <Button variant="default" component={Link} to="/app">
+                  App
+                </Button>
+                <Button
+                  variant="light"
+                  color="red"
+                  onClick={() => {
+                    closeDrawer();
+                    openLogoutModal();
+                  }}
+                >
                   Logout
                 </Button>
               </>
@@ -246,10 +251,17 @@ export default function LandingHeader() {
           <Group justify="center" grow pb="xl" px="md">
             {user ? (
               <>
-                <Link to="/app">
-                  <Button variant="default">App</Button>
-                </Link>
-                <Button variant="light" color="red" onClick={openLogoutModal}>
+                <Button variant="default" component={Link} to="/app">
+                  App
+                </Button>
+                <Button
+                  variant="light"
+                  color="red"
+                  onClick={() => {
+                    closeDrawer();
+                    openLogoutModal();
+                  }}
+                >
                   Logout
                 </Button>
               </>
