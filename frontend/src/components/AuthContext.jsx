@@ -114,14 +114,17 @@ export const AuthProvider = ({ children }) => {
     {
       id: "0",
       name: "Project Manager",
+      color: "blue"
     },
     {
       id: "1",
       name: "Member",
+      color: "green"
     },
     {
       id: "2",
-      name: "Viewer",
+      name: "Client",
+      color: "red"
     },
   ];
 
