@@ -1,85 +1,358 @@
 [
   {
-    "awid": "C-8",
-    "name": "Výběrová společnost a.s.",
-    "description": "Speciální klient.",
-    "owner_id": "U-3287",
+    "awid": "C-004",
+    "name": "Delta Dynamics",
+    "description": "Robotics and Automation",
+    "owner_id": "U-1b213f26",
     "users": [
       {
-        "user_id": "U-2785",
+        "user_id": "U-356c3426",
         "roles": [
           "0"
         ]
       },
       {
-        "user_id": "U-1595",
+        "user_id": "U-e6863b44",
         "roles": [
-          "0",
           "1"
         ]
       },
       {
-        "user_id": "test",
+        "user_id": "U-41a610c4",
         "roles": [
-          "1",
-          "2",
-          "3"
+          "2"
+        ]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
+          "0"
         ]
       }
     ]
   },
   {
-    "awid": "C-7",
-    "name": "Nová společnost k.s.",
-    "description": "Test komanditní společnosti",
-    "owner_id": "U-1595",
+    "awid": "C-005",
+    "name": "Epsilon Enterprises",
+    "description": "Financial Analytics",
+    "owner_id": "U-146a7623",
     "users": [
       {
-        "user_id": "U-3287",
+        "user_id": "U-1c414f46",
         "roles": [
-          "0",
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
           "1"
         ]
       },
       {
-        "user_id": "testiiik",
-        "roles": []
-      },
-      {
-        "user_id": "testiiik 2",
+        "user_id": "U-0f126ac4",
         "roles": [
-          "0",
-          "1"
+          "2"
         ]
       }
     ]
   },
   {
-    "awid": "C-5721fe6e",
-    "name": "1. spol. s.r.o.",
-    "description": "Popisek společnosti ",
-    "owner_id": "u-58959",
-    "users": []
+    "awid": "C-006",
+    "name": "Zeta Systems",
+    "description": "AI & Machine Learning",
+    "owner_id": "U-a8450b45",
+    "users": [
+      {
+        "user_id": "U-356c3426",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-146a7623",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
   },
   {
-    "awid": "C-e84d8401",
-    "name": "test",
-    "description": "tet",
-    "owner_id": "U-123-123",
-    "users": []
+    "awid": "C-007",
+    "name": "Eta Software",
+    "description": "Cloud Solutions Provider",
+    "owner_id": "U-356c3426",
+    "users": [
+      {
+        "user_id": "U-e6863b44",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-0f126ac4",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
   },
   {
-    "awid": "C-71142100",
-    "name": "test",
-    "description": "tet",
-    "owner_id": "U-123-123",
-    "users": []
+    "awid": "C-008",
+    "name": "Theta Communications",
+    "description": "Telecom Services",
+    "owner_id": "U-1b414f26",
+    "users": [
+      {
+        "user_id": "U-a8450b45",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-146a7623",
+        "roles": [
+          "2"
+        ]
+      },
+      {
+        "user_id": "U-0f126ac4",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
   },
   {
-    "awid": "C-d7174e58",
-    "name": "test",
-    "description": "tet",
-    "owner_id": "U-123-123",
-    "users": []
+    "awid": "C-009",
+    "name": "Iota Network Solutions",
+    "description": "Networking Infrastructure",
+    "owner_id": "U-1b213f26",
+    "users": [
+      {
+        "user_id": "U-41a610c4",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-e6863b44",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-010",
+    "name": "Kappa Consulting",
+    "description": "Business Consulting Services",
+    "owner_id": "U-356c3426",
+    "users": [
+      {
+        "user_id": "U-0f126ac4",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-a8450b45",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-146a7623",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-011",
+    "name": "Lambda Legal",
+    "description": "Legal Advisory",
+    "owner_id": "U-e6863b44",
+    "users": [
+      {
+        "user_id": "U-1c414f46",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-41a610c4",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-012",
+    "name": "Mu Manufacturing",
+    "description": "Industrial Manufacturing",
+    "owner_id": "U-a8450b45",
+    "users": [
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-e6863b44",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-356c3426",
+        "roles": [
+          "2"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-013",
+    "name": "Nu Biotech",
+    "description": "Biotechnology Research",
+    "owner_id": "U-0f126ac4",
+    "users": [
+      {
+        "user_id": "U-1c414f46",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-41a610c4",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-014",
+    "name": "Xi Analytics",
+    "description": "Data Analysis and Reporting",
+    "owner_id": "U-41a610c4",
+    "users": [
+      {
+        "user_id": "U-a8450b45",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-e6863b44",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-015",
+    "name": "Omicron Environmental",
+    "description": "Environmental Consulting",
+    "owner_id": "U-1b414f26",
+    "users": [
+      {
+        "user_id": "U-0f126ac4",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-356c3426",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-146a7623",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "awid": "C-016",
+    "name": "Pi Engineering",
+    "description": "Civil and Structural Engineering",
+    "owner_id": "U-356c3426",
+    "users": [
+      {
+        "user_id": "U-1c414f46",
+        "roles": [
+          "0"
+        ]
+      },
+      {
+        "user_id": "U-a8450b45",
+        "roles": [
+          "1"
+        ]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": [
+          "2"
+        ]
+      }
+    ]
   }
 ]
