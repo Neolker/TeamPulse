@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Center,
   Tooltip,
@@ -23,7 +23,7 @@ import { modals } from "@mantine/modals";
 import { useAuth } from "../../AuthContext";
 import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 import AppLogo from "../AppLogo/AppLogo";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NavbarLink({ icon: Icon, label, active, onClick }) {
   return (
@@ -40,17 +40,30 @@ function NavbarLink({ icon: Icon, label, active, onClick }) {
 }
 
 const mockdata = [
-  { icon: IconHome2, label: "Home", link: "/app" },
-  { icon: IconGauge, label: "Dashboard", link: "/dashboard" },
+  { icon: IconHome2, label: "Companies", link: "/app" },
   { icon: IconDeviceDesktopAnalytics, label: "Analytics", link: "/analytics" },
   { icon: IconUser, label: "Account", link: "/account" },
-  { icon: IconSettings, label: "Settings", link: "/settings" },
 ];
 
-export default function Navbar() {
-  const [active, setActive] = useState(2);
+export default function Navbar({ toggleOpen }) {
+  const location = useLocation();
   const { logout } = useAuth();
   const navigate = useNavigate();
+
+  // Determine the active link index based on the current pathname
+  const determineActiveLink = () => {
+    const currentPath = location.pathname;
+    const activeIndex = mockdata.findIndex((link) =>
+      currentPath.includes(link.link)
+    );
+    return activeIndex !== -1 ? activeIndex : 0; // Default to first link if none matches
+  };
+
+  const [active, setActive] = useState(determineActiveLink());
+
+  useEffect(() => {
+    setActive(determineActiveLink());
+  }, [location]); // Re-run when location changes
 
   const openLogoutModal = () =>
     modals.openConfirmModal({
@@ -62,7 +75,7 @@ export default function Navbar() {
       onCancel: () => {},
       onConfirm: () => {
         logout();
-        navigate("/")
+        navigate("/");
       },
     });
 
@@ -75,6 +88,7 @@ export default function Navbar() {
       onClick={() => {
         setActive(index);
         navigate(link.link);
+        toggleOpen();
       }}
     />
   ));
@@ -96,7 +110,10 @@ export default function Navbar() {
         <NavbarLink
           icon={IconLogout}
           label="Logout"
-          onClick={openLogoutModal}
+          onClick={() => {
+            openLogoutModal();
+            toggleOpen();
+          }}
           color="red"
         />
       </Stack>

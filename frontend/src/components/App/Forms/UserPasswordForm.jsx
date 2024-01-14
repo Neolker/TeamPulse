@@ -13,10 +13,9 @@ export function UserPasswordForm({ action }) {
   });
 
   return (
-    <Box style={{ maxWidth: 300 }} mx="auto" mt="xl">
+    <Box style={{ maxWidth: 400 }} mx="auto" mt="xl">
       <form onSubmit={form.onSubmit((values) => action(values))}>
         <PasswordInput
-          required
           label="Password"
           placeholder="Your password"
           onChange={(event) =>

@@ -1,47 +1,63 @@
-import { Card, Avatar, Text, Progress, Badge, Group, ActionIcon } from '@mantine/core';
-import { IconUpload } from '@tabler/icons-react';
+import {
+  Avatar,
+  Badge,
+  Button,
+  Card,
+  Group,
+  Text,
+  ActionIcon,
+} from "@mantine/core";
+import { Link } from "react-router-dom";
+import { IconSettings } from "@tabler/icons-react";
 
 const avatars = [
-  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png',
-  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-4.png',
-  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
+  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
+  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-4.png",
+  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png",
 ];
 
-export default function TaskCard() {
+export default function TaskCard({ company, hasPriviliges }) {
   return (
     <Card withBorder padding="lg" radius="md">
       <Group justify="space-between">
-        
-        <Badge>12 days left</Badge>
+        <Badge color="yellow">{company.name}</Badge>
       </Group>
-
-      <Text fz="lg" fw={500} mt="md">
-        5.3 minor release (September 2022)
-      </Text>
       <Text fz="sm" c="dimmed" mt={5}>
-        Form context management, Switch, Grid and Indicator components improvements, new hook and
-        10+ other changes
+        {company.description}
       </Text>
-
-      <Text c="dimmed" fz="sm" mt="md">
-        Tasks completed:{' '}
-        <Text span fw={500} c="bright">
-          23/36
-        </Text>
-      </Text>
-
-      <Progress value={(23 / 36) * 100} mt={5} color='yellow' />
 
       <Group justify="space-between" mt="md">
-        <Avatar.Group spacing="sm">
-          <Avatar src={avatars[0]} radius="xl" />
-          <Avatar src={avatars[1]} radius="xl" />
-          <Avatar src={avatars[2]} radius="xl" />
-          <Avatar radius="xl">+5</Avatar>
-        </Avatar.Group>
-        <ActionIcon variant="default" size="lg" radius="md">
-          <IconUpload size="1.1rem" />
-        </ActionIcon>
+        {company.users.length > 3 ? (
+          <Avatar.Group spacing="sm">
+            <Avatar src={avatars[0]} radius="xl" />
+            <Avatar src={avatars[1]} radius="xl" />
+            <Avatar src={avatars[2]} radius="xl" />
+            <Avatar radius="xl">+{company.users.length - 3}</Avatar>
+          </Avatar.Group>
+        ) : (
+          <Avatar radius="xl"> {company.users.length}</Avatar>
+        )}
+        <Group>
+          {hasPriviliges && (
+            <Link to={"/settings/" + company.awid}>
+              <ActionIcon
+                variant="filled"
+                size="lg"
+                radius="md"
+                color="gray"
+                aria-label="Settings"
+              >
+                <IconSettings
+                  style={{ width: "70%", height: "70%" }}
+                  stroke={1.5}
+                />
+              </ActionIcon>
+            </Link>
+          )}
+          <Link to={"/company/" + company.awid}>
+            <Button radius="md">Show details</Button>
+          </Link>
+        </Group>
       </Group>
     </Card>
   );

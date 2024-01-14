@@ -5,6 +5,7 @@ import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./components/AuthContext";
+import { CompanyProvider } from "./components/App/CompanyContext.jsx";
 
 import { MantineProvider, createTheme } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
@@ -17,14 +18,16 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <MantineProvider defaultColorScheme="auto" theme={theme}>
-        <ModalsProvider>
-          <BrowserRouter>
-            <Notifications />
-            <App />
-          </BrowserRouter>
-        </ModalsProvider>
-      </MantineProvider>
+      <CompanyProvider>
+        <MantineProvider defaultColorScheme="auto" theme={theme}>
+          <ModalsProvider>
+            <BrowserRouter>
+              <Notifications />
+              <App />
+            </BrowserRouter>
+          </ModalsProvider>
+        </MantineProvider>
+      </CompanyProvider>
     </AuthProvider>
   </React.StrictMode>
 );

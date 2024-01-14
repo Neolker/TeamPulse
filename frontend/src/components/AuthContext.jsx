@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
     const storedUser = sessionStorage.getItem("user");
     return storedUser ? JSON.parse(storedUser) : null;
   });
+  const [users, setUsers] = useState(null);
 
   const login = async (user) => {
     try {
@@ -69,6 +70,28 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const loadUsers = async (session) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/user/view?session=${session}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setUsers(data);
+    } catch (error) {
+      console.error("Error posting data: ", error);
+    }
+  };
+
   const logout = () => {
     sessionStorage.clear();
     setUser(null);
@@ -81,8 +104,31 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      loadUsers(user.session);
+    }
+  }, []);
+
+  const roles = [
+    {
+      id: "0",
+      name: "Project Manager",
+    },
+    {
+      id: "1",
+      name: "Member",
+    },
+    {
+      id: "2",
+      name: "Viewer",
+    },
+  ];
+
   return (
-    <AuthContext.Provider value={{ user, login, logout, loadUser }}>
+    <AuthContext.Provider
+      value={{ user, users, login, logout, loadUser, roles }}
+    >
       {children}
     </AuthContext.Provider>
   );
