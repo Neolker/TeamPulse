@@ -1,54 +1,42 @@
 import {
-  TextInput,
-  PasswordInput,
-  Checkbox,
-  Anchor,
-  Paper,
-  Title,
   Text,
-  Container,
-  Group,
+  Title,
+  TextInput,
   Button,
+  Image,
+  Container,
 } from "@mantine/core";
 import classes from "./Register.module.css";
 import { Link } from "react-router-dom";
 
 export function Register() {
   return (
-    <Container size={420} my={40}>
-      <Title ta="center" className={classes.title}>
-        Welcome!
-      </Title>
-      <Text c="dimmed" size="sm" ta="center" mt={5}>
-        Do you have an account already?{" "}
-        <Link to="/login">
-          <Anchor size="sm" component="button">
-            Log in
-          </Anchor>
-        </Link>
-      </Text>
+    <Container mt="lg">
+      {" "}
+      <div className={classes.wrapper}>
+        <div className={classes.body}>
+          <Title className={classes.title}>Join us now !!</Title>
+          <Text fw={500} fz="lg" mb={5}>
+            Contact your company owner or leave email down below and we will contact you as soon as possible.
+          </Text>
+          <Text fz="sm" c="dimmed">
+            You also will never miss important product updates, latest news and
+            community QA sessions. Our newsletter is once a week, every Sunday.
+          </Text>
 
-      <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-        <TextInput label="First Name" placeholder="you@mantine.dev" required />
-        <TextInput label="Last Name" placeholder="you@mantine.dev" required />
-        <TextInput label="Email" placeholder="you@mantine.dev" required />
+          <div className={classes.controls}>
+            <TextInput
+              placeholder="Your email"
+              classNames={{ input: classes.input, root: classes.inputWrapper }}
+            />
+            <Button className={classes.control}>Submit</Button>
+          </div>
 
-        <PasswordInput
-          label="Password"
-          placeholder="Your password"
-          required
-          mt="md"
-        />
-        <Group justify="space-between" mt="lg">
-          <Checkbox label="Remember me" />
-          <Anchor component="button" size="sm">
-            Forgot password?
-          </Anchor>
-        </Group>
-        <Button fullWidth mt="xl">
-          Sign up
-        </Button>
-      </Paper>
+          
+        </div>
+        <Button component={Link} to="/">Home</Button>
+        {/* <Image src={image.src} className={classes.image} /> */}
+      </div>
     </Container>
   );
 }

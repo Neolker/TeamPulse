@@ -9,6 +9,7 @@ import {
   Divider,
   Stack,
   Container,
+  Anchor,
 } from "@mantine/core";
 import { GoogleButton } from "../components/App/GoogleButton";
 import { useEffect } from "react";
@@ -95,7 +96,16 @@ export default function Login(props) {
             />
           </Stack>
 
-          <Group justify="flex-end" mt="xl">
+          <Group justify="space-between" mt="xl">
+            <Anchor
+              component="button"
+              type="button"
+              c="dimmed"
+              onClick={() => navigate("/register")}
+              size="xs"
+            >
+              Don't have an account? Register
+            </Anchor>
             <Button type="submit" radius="xl">
               Login
             </Button>

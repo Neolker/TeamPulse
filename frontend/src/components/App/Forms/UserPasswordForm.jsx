@@ -17,7 +17,7 @@ export function UserPasswordForm({ action }) {
       <form onSubmit={form.onSubmit((values) => action(values))}>
         <PasswordInput
           label="Password"
-          placeholder="Your password"
+          placeholder="Your new password"
           onChange={(event) =>
             form.setFieldValue("password", event.currentTarget.value)
           }

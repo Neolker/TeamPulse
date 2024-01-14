@@ -1,11 +1,10 @@
+import { Button, Container, Group, SimpleGrid, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
-import { useAuth } from "../components/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
-import { useNavigate } from "react-router-dom";
-import { SimpleGrid, Container, Title, Group, Button } from "@mantine/core";
 import TaskCard from "../components/App/TaskCard/TaskCard";
-import { Link } from "react-router-dom";
-import { hasPriviliges, isOwner } from "../components/App/Utils";
+import { isOwner } from "../components/App/Utils";
+import { useAuth } from "../components/AuthContext";
 
 export default function Application() {
   const { user } = useAuth();
