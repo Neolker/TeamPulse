@@ -175,10 +175,6 @@ export function CompanyMembersForm({
         {selectedUsers.length !== 0 ? (
           <UsersTable
             data={selectedUsers.map((user, index) => {
-              let color = "red";
-
-              if (user.roles[0] === "0") color = "blue";
-              else if (user.roles[0] === "1") color = "green";
 
               return {
                 name:
@@ -188,7 +184,7 @@ export function CompanyMembersForm({
                 email: allUsers.find((u) => u.id === user.user_id)?.email,
                 role: roles.find((role) => role.id === user.roles[0])?.name,
                 onClick: () => handleRemove(user.user_id),
-                color: color,
+                color: roles.find((role) => role.id === user.roles[0])?.color,
               };
             })}
           />
