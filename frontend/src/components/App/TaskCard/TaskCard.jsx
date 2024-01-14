@@ -6,9 +6,11 @@ import {
   Group,
   Text,
   ActionIcon,
+  Title,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { IconSettings, IconUsersGroup } from "@tabler/icons-react";
+import { isManager } from "../Utils";
 
 const avatars = [
   "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
@@ -16,11 +18,23 @@ const avatars = [
   "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png",
 ];
 
-export default function TaskCard({ company, hasPriviliges }) {
+export default function TaskCard({ company, isOwner, isManager }) {
   return (
     <Card withBorder padding="lg" radius="md">
       <Group justify="space-between">
-        <Badge color="yellow">{company.name}</Badge>
+        <Text c="yellow" fw={700}>
+          {company.name}
+        </Text>
+        {isOwner && (
+          <Badge color="orange" size="md">
+            Owner
+          </Badge>
+        )}
+        {isManager && (
+          <Badge color="yellow" size="md">
+            Project Manager
+          </Badge>
+        )}
       </Group>
       <Text fz="sm" c="dimmed" mt={5}>
         {company.description}
@@ -38,7 +52,7 @@ export default function TaskCard({ company, hasPriviliges }) {
           <Avatar radius="xl"> {company.users.length}</Avatar>
         )}
         <Group>
-          {hasPriviliges && (
+          {isOwner && (
             <>
               <Link to={"/settings/" + company.awid}>
                 <ActionIcon

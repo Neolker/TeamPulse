@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
 import TaskCard from "../components/App/TaskCard/TaskCard";
-import { isOwner } from "../components/App/Utils";
+import { isManager, isOwner } from "../components/App/Utils";
 import { useAuth } from "../components/AuthContext";
 
 export default function Application() {
@@ -61,7 +61,8 @@ export default function Application() {
               <TaskCard
                 key={index}
                 company={company}
-                hasPriviliges={isOwner(company, user.id, user.superadmin)}
+                isOwner={isOwner(company, user.id, user.superadmin)}
+                isManager={isManager(company, user.id)}
               />
             ))
           )}
