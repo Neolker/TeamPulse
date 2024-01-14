@@ -1,6 +1,6 @@
 [
   {
-    "id": "U-1595",
+    "id": "U-1c414f46",
     "firstname": "Miloš",
     "lastname": "Hynek",
     "email": "milos.hynek@email.cz",
@@ -10,7 +10,7 @@
     "superadmin": "1"
   },
   {
-    "id": "U-3287",
+    "id": "U-1b213f26",
     "firstname": "Martin",
     "lastname": "Wolker",
     "email": "neolker@gmail.com",
@@ -18,36 +18,6 @@
     "password": "955db0b81ef1989b4a4dfeae8061a9a6",
     "active": "1",
     "superadmin": "1"
-  },
-  {
-    "id": "U-2785",
-    "firstname": "LEA",
-    "lastname": "DOPLNIT",
-    "email": "DOPLNIT",
-    "session": "",
-    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
-    "active": "1",
-    "superadmin": "0"
-  },
-  {
-    "id": "U-9966",
-    "firstname": "neaktivni",
-    "lastname": "uzivatel",
-    "email": "DOPLNIT",
-    "session": "",
-    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
-    "active": "0",
-    "superadmin": "0"
-  },
-  {
-    "id": "U-838b7055",
-    "firstname": "test",
-    "lastname": "test",
-    "email": "test@test.cz",
-    "session": "S-4bf0598517581eb8-TS",
-    "password": "9096381fbf8531a51aa84d159bbfed14",
-    "active": 1,
-    "superadmin": 1
   },
   {
     "id": "U-146a7623",
@@ -64,7 +34,7 @@
     "firstname": "team",
     "lastname": "pulse",
     "email": "admin@teampulse.com",
-    "session": "S-7d5a7c6dd0dec846-TS",
+    "session": "S-8894012a642f3861-TS",
     "password": "1bef317e41b92698b126e88ca61d55cb",
     "active": 1,
     "superadmin": 1
@@ -94,9 +64,9 @@
     "firstname": "Marek",
     "lastname": "Hovančák",
     "email": "marek.hovancak@teampulse.com",
-    "session": "",
+    "session": "S-23cb07a0d1348762-TS",
     "password": "cde532f5b85657b870562ebe89ab04e7",
-    "active": 0,
+    "active": 1,
     "superadmin": 0
   },
   {
@@ -118,15 +88,5 @@
     "password": "f28c35646d9c8e904f442e46739de3e4",
     "active": 0,
     "superadmin": 0
-  },
-  {
-    "id": "U-dd1b5cbb",
-    "firstname": "Jára",
-    "lastname": "Cimrman",
-    "email": "lezici@spici.za-peci",
-    "session": "",
-    "password": "849d90f3f767f1bb0fb5b554a0f5ab69",
-    "active": null,
-    "superadmin": null
   }
 ]
