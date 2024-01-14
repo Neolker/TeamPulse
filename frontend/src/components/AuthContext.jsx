@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }) => {
           superadmin: userDetails.superadmin.toString(),
         }),
       });
-  
+
       if (!response.ok) {
         const data = await response.json();
         notifications.show({
@@ -119,7 +119,6 @@ export const AuthProvider = ({ children }) => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      loadUser(data.session)
       notifications.show({
         title: `User "${data.email}" sucessfully created!`,
         color: "green",
@@ -133,7 +132,76 @@ export const AuthProvider = ({ children }) => {
       });
     }
   };
-  
+  const UserUpdate = async (values) => {
+    console.log(values);
+    try {
+      const response = await fetch("http://localhost:8000/user/update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: values.id,
+          session: values.session,
+          superadmin: values.superadmin.toString(),
+          active: values.active.toString(),
+          firstname: values.firstname,
+          lastname: values.lastname,
+          email: values.email,
+        }),
+      });
+
+      if (!response.ok) {
+        notifications.show({
+          title: `Update of account details of user: ${user.email} was unsuccessfull`,
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      await loadUser(data);
+
+      notifications.show({
+        title: `Account details of ${data.email} was updated successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error posting data: ", error);
+    }
+  };
+  const UserPasswordUpdate = async (value) => {
+    console.log(value);
+    try {
+      const response = await fetch("http://localhost:8000/user/passwd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: value.id,
+          session: value.session,
+          password: value.password,
+        }),
+      });
+
+      if (!response.ok) {
+        notifications.show({
+          title: `Update of account password of user: ${user.email} was unsuccessfull`,
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      await loadUser(data);
+
+      notifications.show({
+        title: `Account password of ${data.email} was updated successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error posting data: ", error);
+    }
+  };
 
   const logout = () => {
     sessionStorage.clear();
@@ -141,9 +209,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const data = sessionStorage.getItem("user");
-    if (data) {
-      setUser(JSON.parse(data));
+    if (user?.id) {
+      loadUser(user);
+      const data = sessionStorage.getItem("user");
+      if (data) {
+        setUser(JSON.parse(data));
+      }
     }
   }, []);
 
@@ -157,23 +228,33 @@ export const AuthProvider = ({ children }) => {
     {
       id: "0",
       name: "Project Manager",
-      color: "blue"
+      color: "blue",
     },
     {
       id: "1",
       name: "Member",
-      color: "green"
+      color: "green",
     },
     {
       id: "2",
       name: "Client",
-      color: "red"
+      color: "red",
     },
   ];
 
   return (
     <AuthContext.Provider
-      value={{ user, users, login, logout, loadUser, roles, createUser }}
+      value={{
+        user,
+        users,
+        login,
+        logout,
+        loadUser,
+        roles,
+        createUser,
+        UserUpdate,
+        UserPasswordUpdate,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -1,4 +1,4 @@
-import { Button, Container, Group, SimpleGrid, Title } from "@mantine/core";
+import { Button, Container, Group, SimpleGrid, Title, Text } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
@@ -54,13 +54,17 @@ export default function Application() {
           )}
         </Group>
         <SimpleGrid cols={{ base: 1, sm: 1, md: 2, lg: 3, xl: 3 }}>
-          {filteredCompanies?.map((company, index) => (
-            <TaskCard
-              key={index}
-              company={company}
-              hasPriviliges={isOwner(company, user.id, user.superadmin)}
-            />
-          ))}
+          {filteredCompanies?.length === 0 ? (
+            <Text>Not companies yet.</Text>
+          ) : (
+            filteredCompanies?.map((company, index) => (
+              <TaskCard
+                key={index}
+                company={company}
+                hasPriviliges={isOwner(company, user.id, user.superadmin)}
+              />
+            ))
+          )}
         </SimpleGrid>
       </Container>
     </>

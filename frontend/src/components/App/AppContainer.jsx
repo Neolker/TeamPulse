@@ -2,13 +2,13 @@ import { AppShell, Burger, Group, SimpleGrid, Image, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import logo from "../../assets/logo/Logo_dark.svg";
 import Navbar from "./Navbar/Navbar";
-import { useMediaQuery } from '@mantine/hooks';
+import { useMediaQuery } from "@mantine/hooks";
+import UserInitialPassword from "./UserInitialPassword";
 
 export default function AppContainer({ children }) {
   const [opened, { toggle }] = useDisclosure();
-  const matches = useMediaQuery('(min-width: 48em)');
+  const matches = useMediaQuery("(min-width: 48em)");
   return (
-
     <AppShell
       header={{ height: 60, collapsed: matches }}
       navbar={{
@@ -32,6 +32,7 @@ export default function AppContainer({ children }) {
         <Navbar toggleOpen={toggle} />
       </AppShell.Navbar>
       <AppShell.Main>{children}</AppShell.Main>
+      <UserInitialPassword />
     </AppShell>
   );
 }

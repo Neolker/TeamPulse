@@ -47,7 +47,7 @@ export default function UserCreateModal() {
       copy(`Email: ${values.email}\nPassword: ${values.password}`);
       setIsCredentialsCopied(true);
     } else {
-      const data = { ...user, ...values}
+      const data = { ...user, ...values, active: 0, superadmin: 0}
       createUser(data)
       setOpened(false);
       setIsCredentialsCopied(false); // Reset for next time the modal is opened
