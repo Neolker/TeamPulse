@@ -1,29 +1,26 @@
-import { useState, useEffect } from "react";
 import {
   Center,
+  Stack,
+  Text,
   Tooltip,
   UnstyledButton,
-  Stack,
   rem,
-  Text,
 } from "@mantine/core";
-import {
-  IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
-  IconFingerprint,
-  IconCalendarStats,
-  IconUser,
-  IconSettings,
-  IconLogout,
-  IconSwitchHorizontal,
-} from "@tabler/icons-react";
-import classes from "./Navbar.module.css";
 import { modals } from "@mantine/modals";
+import {
+  IconDeviceDesktopAnalytics,
+  IconHome2,
+  IconLogout,
+  IconUser,
+  IconUsersGroup,
+  IconWorld,
+} from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../AuthContext";
 import DarkModeToggle from "../../DarkModeToggle/DarkModeToggle";
 import AppLogo from "../AppLogo/AppLogo";
-import { useNavigate, useLocation } from "react-router-dom";
+import classes from "./Navbar.module.css";
 
 function NavbarLink({ icon: Icon, label, active, onClick }) {
   return (
@@ -106,6 +103,15 @@ export default function Navbar({ toggleOpen }) {
       </div>
 
       <Stack justify="center" gap={0}>
+        <NavbarLink
+          icon={IconWorld}
+          label="Web"
+          onClick={() => {
+            navigate("/");
+            toggleOpen();
+          }}
+          color="red"
+        />
         <DarkModeToggle />
         <NavbarLink
           icon={IconLogout}

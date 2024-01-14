@@ -112,9 +112,9 @@ export default function Analytics() {
         <Title order={1} p="md">
           Analytics for{" "}
           {user?.superadmin ? (
-            <Badge color="yellow">SuperAdmin</Badge>
+            <Badge size="xl" color="yellow">SuperAdmin</Badge>
           ) : (
-            <Badge color="yellow">{user?.email}</Badge>
+            <Badge size="xl" color="yellow">{user?.email}</Badge>
           )}
         </Title>
         <Title order={2} p="md">

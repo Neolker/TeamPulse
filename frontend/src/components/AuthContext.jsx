@@ -92,6 +92,49 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const createUser = async (userDetails) => {
+    try {
+      const response = await fetch("http://localhost:8000/user/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          session: userDetails.session,
+          firstname: userDetails.firstname,
+          lastname: userDetails.lastname,
+          email: userDetails.email,
+          password: userDetails.password,
+          active: userDetails.active.toString(),
+          superadmin: userDetails.superadmin.toString(),
+        }),
+      });
+  
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      loadUser(data.session)
+      notifications.show({
+        title: `User "${data.email}" sucessfully created!`,
+        color: "green",
+      });
+      // Handle additional actions after user creation if necessary
+    } catch (error) {
+      console.error("Error creating user: ", error);
+      notifications.show({
+        title: "Error creating user",
+        color: "red",
+      });
+    }
+  };
+  
+
   const logout = () => {
     sessionStorage.clear();
     setUser(null);
@@ -130,7 +173,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, users, login, logout, loadUser, roles }}
+      value={{ user, users, login, logout, loadUser, roles, createUser }}
     >
       {children}
     </AuthContext.Provider>

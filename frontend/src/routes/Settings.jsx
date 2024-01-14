@@ -1,18 +1,16 @@
-import { useEffect } from "react";
-import { useAuth } from "../components/AuthContext";
+import { Container, Paper, SimpleGrid, Title } from "@mantine/core";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { SimpleGrid, Title, Paper, Container, Text } from "@mantine/core";
 import { CompanyDetailsForm } from "../components/App/Forms/CompanyDetailsForm";
 import { CompanyMembersForm } from "../components/App/Forms/CompanyMembersForm";
-import { useState } from "react";
+import { useAuth } from "../components/AuthContext";
 import BackButton from "../components/BackButton";
 
 export default function Settings() {
   const { user, users, roles } = useAuth();
   const {
     companies,
-    isLoading,
     updateCompany,
     createCompany,
     addUserToCompany,

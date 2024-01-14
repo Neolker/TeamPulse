@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { SimpleGrid, Container, Title, Group, Button } from "@mantine/core";
 import TaskCard from "../components/App/TaskCard/TaskCard";
 import { Link } from "react-router-dom";
-import { hasPriviliges } from "../components/App/Utils";
+import { hasPriviliges, isOwner } from "../components/App/Utils";
 
 export default function Application() {
   const { user } = useAuth();
@@ -31,8 +31,6 @@ export default function Application() {
       return isOwner || isInUsersArray;
     });
   };
-
-
 
   useEffect(() => {
     if (!isLoading && companies && user) {
@@ -61,7 +59,7 @@ export default function Application() {
             <TaskCard
               key={index}
               company={company}
-              hasPriviliges={hasPriviliges(company, user.id, user.superadmin)}
+              hasPriviliges={isOwner(company, user.id, user.superadmin)}
             />
           ))}
         </SimpleGrid>
