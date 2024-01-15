@@ -1,10 +1,17 @@
 # TODO
 V tom, co máte upravte následující:
 - [ ] zabývat se pouze entitami workplace a task - upravit produkty v BM a datové úložiště v AM
+  - [ ] Validace na BE a ABL (business logika)
 - [ ] aktéři - zabývat se pouze Super User a Member
+  - [ ] Zamerit se v knihach pouze na App Owner a Member
 - [ ] pro workplace zpracovat CMDs create a get - implementace (upravit ABL a DAO) + dokumentace (BM a AM)
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
+
+## Extra
+- [ ] Session v headru misto body
+- [ ] Nasazeni na cloud / server
+- [ ] Prihlaseni 3. stranami (Google)
 
 # Teampulse
 ![TeamPulseScreen](TeamPulseScreen.png)
