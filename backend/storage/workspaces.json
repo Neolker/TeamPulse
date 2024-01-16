@@ -28,5 +28,13 @@
       "U-12345",
       "U-123"
     ]
+  },
+  {
+    "id": "W-d4b1615c",
+    "awid": "awid42",
+    "name": "test test",
+    "description": "test test",
+    "owner_id": "user42",
+    "members": []
   }
 ]
