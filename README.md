@@ -19,6 +19,8 @@ V tom, co máte upravte následující:
   - [x] **test**: workspace-get po změně ABL/DAO
   - [x] **business logika**: workspace-get
   - [x] **test**: business logiky worskpace-get
+  - [ ] **update**: Business Model Book
+  - [ ] **update**: Application Model Book
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
   - [x] **fix code**: kontrola session
   - [x] **fix code**: task-create (ABL/DAO)
@@ -28,7 +30,9 @@ V tom, co máte upravte následující:
   - [x] **fix code**: task-view (ABL/DAO)
   - [x] **test**: task-view po změně ABL/DAO
   - [x] **business logika**: task-view (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
-  - [ ] **test**: Test business logic of task-view
+  - [x] **test**: Test business logic of task-view
+  - [ ] **update**: Business Model Book
+  - [ ] **update**: Application Model Book
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
 ## Extra / Bonus
