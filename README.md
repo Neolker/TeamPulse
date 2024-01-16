@@ -15,7 +15,8 @@ V tom, co máte upravte následující:
   - [x] **fix code**: task-create (ABL/DAO)
   - [x] **test**: task-create po změně ABL/DAO
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce vytvorit task)
-  - [ ] **fix code**: task-view (ABL/DAO)
+  - [x] **fix code**: task-view (ABL/DAO)
+  - [ ] **test**: task-view po změně ABL/DAO
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
