@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv").default;
 const TaskDao = require("../../dao/task-dao");
@@ -18,6 +19,15 @@ async function ViewAbl(req, res) {
     const valid = ajv.validate(schema, body);
     if (valid) {
 		  const tasks = await dao.viewTasks();
+		  //create log:
+      const currentY = new Date().getFullYear();
+			const currentM = new Date().getMonth()+1;
+			const currentTs = new Date().toUTCString();				
+			await fs.appendFileSync( 
+				path.join(__dirname, "..", "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
+				"task/view at "+currentTs+"\n"+JSON.stringify(tasks)+"\n"+"-------"+"\n"
+				);	
+			//return	
 		  res.json(tasks);
 		} else {
       res.status(400).send({ "error": "Validation of the input failed: session required." });
