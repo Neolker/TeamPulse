@@ -18,7 +18,8 @@ V tom, co máte upravte následující:
   - [x] **fix code**: kontrola session
   - [x] **fix code**: task-create (ABL/DAO)
   - [x] **test**: task-create po změně ABL/DAO
-  - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce vytvorit task)
+  - [x] **business logika**: task-create (kontrola session, existence owner_id / company / a pokud je user superadmin, člen nebo vlasntík company)
+  - [x] **test**: task-create: test oprvávnění atd.
   - [x] **fix code**: task-view (ABL/DAO)
   - [x] **test**: task-view po změně ABL/DAO
   - [ ] **business logika**: task-create (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)

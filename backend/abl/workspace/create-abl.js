@@ -6,6 +6,8 @@ const WorkspaceDao = require("../../dao/workspace-dao");
 let dao = new WorkspaceDao(path.join(__dirname, "..", "..", "storage", "workspaces.json"));
 const UserDao = require("../../dao/user-dao");
 let daoUser = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"));
+const CompanyDao = require("../../dao/company-dao");
+let daoCompany = new CompanyDao(path.join(__dirname, "..", "..", "storage", "companies.json"));
 
 let schema = {
   type: "object",
@@ -37,9 +39,34 @@ async function CreateAbl(req, res) {
 		  //check logged user via session:
 		  let loggedUser=await daoUser.userBySession(workspace.session);
 		  if(loggedUser===false){throw new Error("You are not logged into a system. Please log-in before.");}
+		  //check existing workspace
+		  let usedCompany=await daoCompany.getCompany(workspace.awid);
+		  if(usedCompany){}else{throw new Error("Entered company awid: "+workspace.awid+" does not exist.");}
+		  //check existing owner_id
+		  let usedUser=await daoUser.getUser(workspace.owner_id);
+		  if(usedUser){}else{throw new Error("Entered owner id: "+workspace.owner_id+" does not exist.");}
+		  //check all rights of logged user
+		  if(parseInt(loggedUser.superadmin)===1){
+		  	// do nothing, all is ok
+		  }else{
+		  	if((usedCompany.owner_id)===(loggedUser.id)){
+		  		// do nothing, all is ok
+		  	}else{
+		  		let existInCompany=false;
+		  		if(usedCompany.users && Array.isArray(usedCompany.users) ){
+						for (let j = 0, lem = usedCompany.users.length; j < lem; j++) {						
+							if((usedCompany.users[j].user_id) === (loggedUser.id)){								
+								existInCompany=true;
+								break;
+							}    		
+						}
+					}
+					if(existInCompany===false){throw new Error("You must be super admin or company owner or company member (user) to add workspace into this company.");}	   		  	
+		  	}
+		  }		  
 		  //check all we need we have
 		  if(workspace.name.length<1){throw new Error("Name is required, workspace has not been created. Minimal lenght: 1 character in the name.");}   
-		  if(workspace.awid.length<6){throw new Error("Awid is required, workspace has not been created. Minimal lenght: 6 character in the awid.");}   
+		  if(workspace.awid.length<3){throw new Error("Awid is required, workspace has not been created. Minimal lenght: 3 character in the awid.");}   
 		  if(workspace.owner_id.length<6){throw new Error("Owner_id is required, workspace has not been created. Minimal lenght: 6 characters.");}     
 		  //fill-in prototype 
 		 	wsPrototype.awid = workspace.awid;
