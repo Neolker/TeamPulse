@@ -1,5 +1,7 @@
 # TODO
+
 V tom, co máte upravte následující:
+
 - [ ] zabývat se pouze entitami workplace a task - upravit produkty v BM a datové úložiště v AM
   - [ ] Validace na BE a ABL (business logika)
 - [ ] aktéři - zabývat se pouze Super User a Member
@@ -15,14 +17,17 @@ V tom, co máte upravte následující:
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
 ## Extra
+
 - [ ] Session v headru misto body
 - [ ] Nasazeni na cloud / server
 - [ ] Prihlaseni 3. stranami (Google)
 
 # Teampulse
+
 ![TeamPulseScreen](TeamPulseScreen.png)
 
 ## Important study / project links
+
 - [Project assignment](https://uuapp.plus4u.net/uu-dockit-maing02/4e68298f1658473e9bf5692272883290/document?documentId=64ca0852a584300036f31e3e) contains all the requirements for the project.
 - [Project portal](https://uuapp.plus4u.net/uu-dockit-maing02/4e68298f1658473e9bf5692272883290/document?documentId=6502e8b919026200367a8d60) workshop, evaluation, schedule and teams.
   - [Business Request](https://uuapp.plus4u.net/uu-bookkit-maing01/ce654e591da546fabe9f39e68670fb87/book) book (User Stories, Visions, etc.)
@@ -37,6 +42,7 @@ V tom, co máte upravte následující:
   - uuJokes - [Application Model](https://uuapp.plus4u.net/uu-bookkit-maing01/71f8d7b5cfdc4336b0abfe47b3cb237b/book/page?code=home)
 
 ## Installation of the necessary software
+
 - Visual Studio Code - https://code.visualstudio.com/Download
 - Node.js - https://nodejs.org/en/download
 - Git - https://git-scm.com/downloads
@@ -46,6 +52,7 @@ V tom, co máte upravte následující:
   - Or use simple testing pages - https://github.com/Neolker/TeamPulse/tree/main/backend/tests
 
 ## Download and start the project
+
 - Command `git clone https://github.com/Neolker/TeamPulse` or by using the GUI in VSCode
 - Open two terminals, the first for **server**:
   - From the server folder `cd .\backend\`
