@@ -24,30 +24,9 @@ class TaskDao {
 
   async createTask(task) {
     let taskslist = await this._loadAllTasks();
-    let taskPrototype = {
-      "id": "T-" + crypto.randomBytes(4).toString("hex"),
-      "workspace_id": "W-0000",
-		  "name": "Task",
-		  "description": "Lorem ipsum",
-		  "solver_id": "U-0000",
-			"status": "0",
-			"deadline": "1.1.1970"     
-    };
-    if(task.name.length<1){throw new Error("Name is required, task has not been created. Minimal lenght: 1 character in the name.");}
-    if(task.workspace_id.length<6){throw new Error("Workspace_id is required, task has not been created. Minimal lenght: 6 characters.");}
-    if(task.description.length<1){throw new Error("Description is required, task has not been created. Minimal lenght: 1 character in the description.");}
-    if(task.solver_id.length<6){throw new Error("Solver_id is required, task has not been created. Minimal lenght: 6 characters.");}
-    if(task.deadline.length<8){throw new Error("Date of deadline is required, task has not been created. Minimal lenght: 8 character in the description.");}    
-    taskPrototype.workspace_id = task.workspace_id;
-    taskPrototype.name = task.name;
-    taskPrototype.description = task.description;
-    taskPrototype.solver_id = task.solver_id;
-    taskPrototype.status = task.status;
-    taskPrototype.deadline = task.deadline;    
-    taskslist.push(taskPrototype);
+    taskslist.push(task );
     await wf(this._getStorageLocation(), JSON.stringify(taskslist, null, 2));
-    this._createLog("task/create",JSON.stringify(taskPrototype) );
-    return taskPrototype;
+    return task;
   }
   
   async getTask(id) {
