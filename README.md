@@ -17,8 +17,8 @@ V tom, co máte upravte následující:
   - [ ] **test**: business logiky worskpace-create
   - [x] **fix code**: workspace-get (ABL/DAO)
   - [x] **test**: workspace-get po změně ABL/DAO
-  - [ ] **business logika**: workspace-create
-  - [ ] **test**: business logiky worskpace-create
+  - [x] **business logika**: workspace-get
+  - [x] **test**: business logiky worskpace-get
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
   - [x] **fix code**: kontrola session
   - [x] **fix code**: task-create (ABL/DAO)
@@ -27,7 +27,8 @@ V tom, co máte upravte následující:
   - [x] **test**: task-create: test oprvávnění atd.
   - [x] **fix code**: task-view (ABL/DAO)
   - [x] **test**: task-view po změně ABL/DAO
-  - [ ] **business logika**: task-create (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
+  - [ ] **business logika**: task-view (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
+  - [ ] **test**: Test business logic of task-view
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
 ## Extra / Bonus

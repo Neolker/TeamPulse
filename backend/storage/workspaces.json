@@ -15,7 +15,9 @@
     "name": "Nový vesmír",
     "description": "Objeven voyagerem",
     "owner_id": "U-123456",
-    "members": []
+    "members": [
+      ""
+    ]
   },
   {
     "id": "W-1234",
