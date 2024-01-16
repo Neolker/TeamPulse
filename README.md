@@ -43,13 +43,13 @@ V tom, co máte upravte následující:
 
 ## Installation of the necessary software
 
-- Visual Studio Code - https://code.visualstudio.com/Download
-- Node.js - https://nodejs.org/en/download
-- Git - https://git-scm.com/downloads
+- Visual Studio Code - <https://code.visualstudio.com/Download>
+- Node.js - <https://nodejs.org/en/download>
+- Git - <https://git-scm.com/downloads>
 - API server tester (GET/POST):
-  - Insomnia - https://insomnia.rest/download
-  - Postman - https://www.postman.com/downloads/
-  - Or use simple testing pages - https://github.com/Neolker/TeamPulse/tree/main/backend/tests
+  - Insomnia - <https://insomnia.rest/download>
+  - Postman - <https://www.postman.com/downloads/>
+  - Or use simple testing pages - <https://github.com/Neolker/TeamPulse/tree/main/backend/tests>
 
 ## Download and start the project
 
@@ -58,14 +58,14 @@ V tom, co máte upravte následující:
   - From the server folder `cd .\backend\`
   - Command `npm i` installs all necessary packages (Express.js etc.), just start once
   - **Server** then run the command `npm start`
-  - Should it then **server** run on http://localhost:8000
+  - Should it then **server** run on <http://localhost:8000>
   - To stop the **server** you can then use the keyboard shortcut `CTRL + C`, by type `Y` and confirmation `ENTER`
   - Rebooting with `npm start` - for example after a change in the server code (don't forget to save!) or you can use the `arrow up` in the terminal to scroll through commands from the history
 - In the second terminal we run **client**:
   - Again, we move to the client folder  `cd .\frontend\`
   - Command `npm i` installs all necessary packages (React.js etc.)
   - **Client** then run the same `npm run dev` command
-  - **Client** should start itself in the browser at: http://localhost:5173/
+  - **Client** should start itself in the browser at: <http://localhost:5173/>
   - Exit **client** then use the same shortcut `CTRL + C`
 
 ## API Documentation
