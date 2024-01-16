@@ -9,9 +9,9 @@ V tom, co máte upravte následující:
 - [ ] aktéři - zabývat se pouze Super User a Member
   - [ ] Zamerit se v knihach pouze na **App Owner** a **Member**
 - [ ] pro workplace zpracovat CMDs create a get - implementace (upravit ABL a DAO) + dokumentace (BM a AM)
-  - [ ] **fix code**: workspace-create (ABL/DAO)
+  - [x] **fix code**: workspace-create (ABL/DAO)
   - [ ] **test**: workspace-create po změně ABL/DAO
-  - [ ] **fix code**: workspace-get (ABL/DAO)
+  - [x] **fix code**: workspace-get (ABL/DAO)
   - [ ] **test**: workspace-get po změně ABL/DAO
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
   - [x] **fix code**: task-create (ABL/DAO)
