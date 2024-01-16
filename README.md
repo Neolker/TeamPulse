@@ -8,12 +8,17 @@ V tom, co máte upravte následující:
   - [ ] **update**: Application Model Book
 - [ ] aktéři - zabývat se pouze Super User a Member
   - [ ] Zamerit se v knihach pouze na **App Owner** a **Member**
+  - [x] I na BE řešit pouze **App Owner** a **Member**
 - [ ] pro workplace zpracovat CMDs create a get - implementace (upravit ABL a DAO) + dokumentace (BM a AM)
   - [x] **fix code**: kontrola session
   - [x] **fix code**: workspace-create (ABL/DAO)
   - [x] **test**: workspace-create po změně ABL/DAO
+  - [ ] **business logika**: workspace-create
+  - [ ] **test**: business logiky worskpace-create
   - [x] **fix code**: workspace-get (ABL/DAO)
   - [x] **test**: workspace-get po změně ABL/DAO
+  - [ ] **business logika**: workspace-create
+  - [ ] **test**: business logiky worskpace-create
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
   - [x] **fix code**: kontrola session
   - [x] **fix code**: task-create (ABL/DAO)
