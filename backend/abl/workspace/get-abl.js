@@ -26,10 +26,29 @@ async function GetAbl(req, res) {
 		  if(loggedUser===false){throw new Error("You are not logged into a system. Please log-in before.");}
 		  //get:
       const id = body.id;
-      const ws = await dao.getWorkspace(id);
+      const ws = await dao.getWorkspace(id);      
       if (!ws) {
         res.status(400).send({ "error": "Workspace with id " + id + " does not exist." });
       }
+      //check all rights of logged user
+		  if(parseInt(loggedUser.superadmin)===1){
+		  	// do nothing, all is ok
+		  }else{
+		  	if((ws.owner_id)===(loggedUser.id)){
+		  		// do nothing, all is ok
+		  	}else{
+		  		let existInWorkspace=false;
+		  		if(ws.members && Array.isArray(ws.members) ){
+						for (let j = 0, lem = ws.members.length; j < lem; j++) {						
+							if((ws.members[j]) === (loggedUser.id)){								
+								existInWorkspace=true;
+								break;
+							}    		
+						}
+					}
+					if(existInWorkspace===false){throw new Error("You must be super admin or workspace owner or workspace member to get workspace informations.");}	   			
+				}	  
+		  }      
       //create log:
       const currentY = new Date().getFullYear();
 			const currentM = new Date().getMonth()+1;
