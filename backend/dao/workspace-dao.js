@@ -32,7 +32,6 @@ class WorkspaceDao {
   async getWorkspace(id) {
    	let workspaceslist = await this._loadAllWorkspaces();
     const result = workspaceslist.find((b) => b.id === id);
-    this._createLog("workspace/get",JSON.stringify(result) );
     return result;
   }
   

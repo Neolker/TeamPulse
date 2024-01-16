@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv").default;
 const WorkspaceDao = require("../../dao/workspace-dao");
@@ -23,6 +24,15 @@ async function GetAbl(req, res) {
       if (!ws) {
         res.status(400).send({ "error": "Workspace with id " + id + " does not exist." });
       }
+      //create log:
+      const currentY = new Date().getFullYear();
+			const currentM = new Date().getMonth()+1;
+			const currentTs = new Date().toUTCString();				
+			await fs.appendFileSync( 
+				path.join(__dirname, "..", "..", "log", "auditLog-"+currentY+"-"+currentM+".txt") , 
+				"workspace/get at "+currentTs+"\n"+JSON.stringify(ws)+"\n"+"-------"+"\n"
+				);	
+			//return	
       res.json(ws);
     } else {
       res.status(400).send({ "error": "Validation of the input failed: id and session is required." });
