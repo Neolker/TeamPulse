@@ -13,6 +13,7 @@ V tom, co máte upravte následující:
   - [ ] **fix code**: workspace-get (ABL/DAO)
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
   - [x] **fix code**: task-create (ABL/DAO)
+  - [x] **test**: task-create po změně ABL/DAO
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce vytvorit task)
   - [ ] **fix code**: task-view (ABL/DAO)
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
