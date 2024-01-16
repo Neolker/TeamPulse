@@ -38,7 +38,6 @@ class TaskDao {
 
   async viewTasks() {
     let taskslist = await this._loadAllTasks();
-    this._createLog("task/view",JSON.stringify(taskslist) );
     return taskslist;
   }
   
