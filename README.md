@@ -5,7 +5,13 @@ V tom, co máte upravte následující:
 - [ ] aktéři - zabývat se pouze Super User a Member
   - [ ] Zamerit se v knihach pouze na App Owner a Member
 - [ ] pro workplace zpracovat CMDs create a get - implementace (upravit ABL a DAO) + dokumentace (BM a AM)
+  - [ ] **fix code**: workspace-create (ABL/DAO)
+  - [ ] **fix code**: workspace-get (ABL/DAO)
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
+  - [x] MH - **fix code**: task-create (ABL/DAO)
+  - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce vytvorit task)
+  - [ ] **fix code**: task-view (ABL/DAO)
+  - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
 ## Extra
