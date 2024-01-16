@@ -148,6 +148,17 @@ class UserDao {
     return {"logouted":true};
   }
   
+  async userBySession(session) {
+  	if(session.length<1){
+  		return false;
+  		}
+  	let userslist = await this._loadAllUsers();
+    const userIndex = userslist.findIndex((b) => b.session === session);
+  	if (userIndex < 0) {
+  		return false;
+  		}	
+  	return userslist[userIndex];
+  	}
 
   async _loadAllUsers() {
     let userslist;

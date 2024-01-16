@@ -3,6 +3,8 @@ const path = require("path");
 const Ajv = require("ajv").default;
 const TaskDao = require("../../dao/task-dao");
 let dao = new TaskDao(path.join(__dirname, "..", "..", "storage", "tasks.json"));
+const UserDao = require("../../dao/user-dao");
+let daoUser = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"));
 
 let schema = {
   type: "object",
@@ -18,6 +20,10 @@ async function ViewAbl(req, res) {
     const body = req.query.session ? req.query : req.body;
     const valid = ajv.validate(schema, body);
     if (valid) {
+    	//check logged user via session:
+		  let loggedUser=await daoUser.userBySession(body.session);
+		  if(loggedUser===false){throw new Error("You are not logged into a system. Please log-in before.");}
+		  //get tasks:
 		  const tasks = await dao.viewTasks();
 		  //create log:
       const currentY = new Date().getFullYear();
