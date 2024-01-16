@@ -127,3 +127,24 @@ user/get at Tue, 16 Jan 2024 16:28:01 GMT
 task/create at Tue, 16 Jan 2024 16:28:01 GMT
 {"id":"T-eb01a263","workspace_id":"W-1234","name":"Testík","description":"Něco","solver_id":"U-1b414f26","status":"","deadline":"1.1.1999"}
 -------
+workspace/get at Tue, 16 Jan 2024 17:04:46 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":[]}
+-------
+workspace/get at Tue, 16 Jan 2024 17:05:04 GMT
+undefined
+-------
+workspace/get at Tue, 16 Jan 2024 17:06:06 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":["U-1b213f26"]}
+-------
+workspace/get at Tue, 16 Jan 2024 17:06:34 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":["U-1b213f26"]}
+-------
+workspace/get at Tue, 16 Jan 2024 17:06:36 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":["U-1b213f26"]}
+-------
+workspace/get at Tue, 16 Jan 2024 17:06:47 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":[""]}
+-------
+workspace/get at Tue, 16 Jan 2024 17:07:00 GMT
+{"id":"W-570be491","awid":"X-123456","name":"Nový vesmír","description":"Objeven voyagerem","owner_id":"U-123456","members":[""]}
+-------
