@@ -22,7 +22,7 @@ V tom, co máte upravte následující:
 - [ ] Nasazeni na cloud / server
 - [ ] Prihlaseni 3. stranami (Google)
 
-# Teampulse
+## Teampulse
 
 ![TeamPulseScreen](TeamPulseScreen.png)
 
