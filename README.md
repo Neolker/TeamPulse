@@ -3,14 +3,16 @@
 V tom, co máte upravte následující:
 
 - [ ] zabývat se pouze entitami workplace a task - upravit produkty v BM a datové úložiště v AM
-  - [ ] Validace na BE a ABL (business logika)
+  - [ ] **add**: Validace na BE a ABL (business logika)
+  - [ ] **update**: Business Model Book
+  - [ ] **update**: Application Model Book
 - [ ] aktéři - zabývat se pouze Super User a Member
-  - [ ] Zamerit se v knihach pouze na App Owner a Member
+  - [ ] Zamerit se v knihach pouze na **App Owner** a **Member**
 - [ ] pro workplace zpracovat CMDs create a get - implementace (upravit ABL a DAO) + dokumentace (BM a AM)
   - [ ] **fix code**: workspace-create (ABL/DAO)
   - [ ] **fix code**: workspace-get (ABL/DAO)
 - [ ] pro task zpracovat CMDs create a list (upravit ABL a DAO) - implementace + dokumentace (BM a AM)
-  - [x] MH - **fix code**: task-create (ABL/DAO)
+  - [x] **fix code**: task-create (ABL/DAO)
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce vytvorit task)
   - [ ] **fix code**: task-view (ABL/DAO)
   - [ ] **business logika**: task-create (kontrola session, ze ma spravnou roli (member a vyse) a ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
