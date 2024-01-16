@@ -91,3 +91,9 @@ undefined
 workspace/get at Tue, 16 Jan 2024 12:55:00 GMT
 {"id":"W-d4b1615c","awid":"awid42","name":"test test","description":"test test","owner_id":"user42","members":[]}
 -------
+task/view at Tue, 16 Jan 2024 13:13:33 GMT
+[{"id":"T-1548","workspace_id":"W-1211","name":"První úkol","description":"Udělat vše správně.","solver_id":"U-3287","status":"0","deadline":"31.1.2024"},{"id":"T-eb7df715","workspace_id":"W-1111","name":"test","description":"test","solver_id":"U-2222","status":"99","deadline":"31.1.2024"},{"id":"xxxx","workspace_id":"xxxx","name":"xxxx","description":"xxx","solver_id":"U-xxx","status":"xxx","deadline":"31.1.xxxx"},{"id":"T-ac11d21d","workspace_id":"w-test","name":"aaaa","description":"bbbb","solver_id":"cc-cc-cc","status":"dddd","deadline":"1.1.2030"}]
+-------
+workspace/get at Tue, 16 Jan 2024 13:14:09 GMT
+{"id":"W-d4b1615c","awid":"awid42","name":"test test","description":"test test","owner_id":"user42","members":[]}
+-------
