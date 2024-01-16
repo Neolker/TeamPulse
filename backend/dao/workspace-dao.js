@@ -23,26 +23,10 @@ class WorkspaceDao {
 	}	
 
   async createWorkspace(ws) {
-    let workspaceslist = await this._loadAllWorkspaces();
-    let wsPrototype = {
-      "id": "W-" + crypto.randomBytes(4).toString("hex"),
-      "awid": "C-0000",            
-		  "name": "WorkSpace",
-		  "description": "",
-		  "owner_id": "U-0000",			
-			"members": []     
-    };
-    if(ws.name.length<1){throw new Error("Name is required, workspace has not been created. Minimal lenght: 1 character in the name.");}   
-    if(ws.awid.length<6){throw new Error("Awid is required, workspace has not been created. Minimal lenght: 6 character in the awid.");}   
-    if(ws.owner_id.length<6){throw new Error("Owner_id is required, workspace has not been created. Minimal lenght: 6 characters.");}      
-   	wsPrototype.awid = ws.awid;
-   	wsPrototype.name = ws.name;
-    wsPrototype.description = ws.description;
-    wsPrototype.owner_id = ws.owner_id;        
-    workspaceslist.push(wsPrototype);
-    await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));
-    this._createLog("workspace/create",JSON.stringify(wsPrototype) );
-    return wsPrototype;
+    let workspaceslist = await this._loadAllWorkspaces();         
+    workspaceslist.push(ws);
+    await wf(this._getStorageLocation(), JSON.stringify(workspaceslist, null, 2));    
+    return ws;
   }
   
   async getWorkspace(id) {
