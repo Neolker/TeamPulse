@@ -6,6 +6,8 @@ const TaskDao = require("../../dao/task-dao");
 let dao = new TaskDao(path.join(__dirname, "..", "..", "storage", "tasks.json"));
 const UserDao = require("../../dao/user-dao");
 let daoUser = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"));
+const WorkspaceDao = require("../../dao/workspace-dao");
+let daoWorkspace = new WorkspaceDao(path.join(__dirname, "..", "..", "storage", "workspaces.json"));
 
 let schema = {
   type: "object",
@@ -40,6 +42,31 @@ async function CreateAbl(req, res) {
 		  //check logged user via session:
 		  let loggedUser=await daoUser.userBySession(task.session);
 		  if(loggedUser===false){throw new Error("You are not logged into a system. Please log-in before.");}
+		  //check existing workspace
+		  let usedWorkspace=await daoWorkspace.getWorkspace(task.workspace_id);
+		  if(usedWorkspace){}else{throw new Error("Entered workspace id: "+task.workspace_id+" does not exist.");}
+		  //check existing solver_id
+		  let usedUser=await daoUser.getUser(task.solver_id);
+		  if(usedUser){}else{throw new Error("Entered solver id: "+task.solver_id+" does not exist.");}
+		  //check all rights of logged user
+		  if(parseInt(loggedUser.superadmin)===1){
+		  	// do nothing, all is ok
+		  }else{
+		  	if((usedWorkspace.owner_id)===(loggedUser.id)){
+		  		// do nothing, all is ok
+		  	}else{
+		  		let existInMember=false;
+		  		if(usedWorkspace.members && Array.isArray(usedWorkspace.members) ){
+						for (let j = 0, lem = usedWorkspace.members.length; j < lem; j++) {						
+							if((usedWorkspace.members[j]) === (loggedUser.id)){								
+								existInMember=true;
+								break;
+							}    		
+						}
+					}
+					if(existInMember===false){throw new Error("You must be super admin or workspace owner or workspace member to add task into this workspace.");}	   		  	
+		  	}
+		  }		  
 		  //check all we need we have:
 		  if(task.name.length<1){throw new Error("Name is required, task has not been created. Minimal lenght: 1 character in the name.");}
 		  if(task.workspace_id.length<6){throw new Error("Workspace_id is required, task has not been created. Minimal lenght: 6 characters.");}
