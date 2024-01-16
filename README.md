@@ -13,8 +13,8 @@ V tom, co máte upravte následující:
   - [x] **fix code**: kontrola session
   - [x] **fix code**: workspace-create (ABL/DAO)
   - [x] **test**: workspace-create po změně ABL/DAO
-  - [ ] **business logika**: workspace-create
-  - [ ] **test**: business logiky worskpace-create
+  - [x] **business logika**: workspace-create
+  - [x] **test**: business logiky worskpace-create
   - [x] **fix code**: workspace-get (ABL/DAO)
   - [x] **test**: workspace-get po změně ABL/DAO
   - [x] **business logika**: workspace-get
@@ -27,7 +27,7 @@ V tom, co máte upravte následující:
   - [x] **test**: task-create: test oprvávnění atd.
   - [x] **fix code**: task-view (ABL/DAO)
   - [x] **test**: task-view po změně ABL/DAO
-  - [ ] **business logika**: task-view (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
+  - [x] **business logika**: task-view (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
   - [ ] **test**: Test business logic of task-view
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
