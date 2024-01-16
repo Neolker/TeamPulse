@@ -30,8 +30,10 @@ V tom, co máte upravte následující:
   - [ ] **business logika**: task-create (kontrola session, ~~ze ma spravnou roli (client a vyse - coz by meli mit vsichni) a~~ ze je owner anebo member urciteho workspace ve kterem chce zobrazit tasky)
 - [ ] FE - zpracovat routu workplace detail spolu se seznamem tasků - Admin uvidí tasky všech userů, user uvidí pouze svoje tasky - implementace + dokumentace (AM)
 
-## Extra
+## Extra / Bonus
 
+- [ ] Vytvořit lepší data ve storage pro prezentaci
+- [ ] Refactoring kódu (např. přehlednější podmínky v business logice)
 - [ ] Session v headru misto body
 - [ ] Nasazeni na cloud / server
 - [ ] Prihlaseni 3. stranami (Google)
