@@ -109,3 +109,21 @@ workspace/view at Tue, 16 Jan 2024 13:21:52 GMT
 task/create at Tue, 16 Jan 2024 13:22:53 GMT
 {"id":"T-adbd3d67","workspace_id":"W-1234","name":"Martin","description":"popis","solver_id":"solver","status":"status","deadline":"1.1.9999"}
 -------
+user/get at Tue, 16 Jan 2024 16:26:31 GMT
+undefined
+-------
+user/get at Tue, 16 Jan 2024 16:26:53 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"S-23cb07a0d1348762-TS","password":"cde532f5b85657b870562ebe89ab04e7","active":1,"superadmin":0}
+-------
+user/get at Tue, 16 Jan 2024 16:27:04 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"S-23cb07a0d1348762-TS","password":"cde532f5b85657b870562ebe89ab04e7","active":1,"superadmin":0}
+-------
+user/get at Tue, 16 Jan 2024 16:27:34 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"S-23cb07a0d1348762-TS","password":"cde532f5b85657b870562ebe89ab04e7","active":1,"superadmin":0}
+-------
+user/get at Tue, 16 Jan 2024 16:28:01 GMT
+{"id":"U-1b414f26","firstname":"Marek","lastname":"Hovančák","email":"marek.hovancak@teampulse.com","session":"S-23cb07a0d1348762-TS","password":"cde532f5b85657b870562ebe89ab04e7","active":1,"superadmin":1}
+-------
+task/create at Tue, 16 Jan 2024 16:28:01 GMT
+{"id":"T-eb01a263","workspace_id":"W-1234","name":"Testík","description":"Něco","solver_id":"U-1b414f26","status":"","deadline":"1.1.1999"}
+-------
