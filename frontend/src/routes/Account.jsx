@@ -1,21 +1,10 @@
-import { useEffect } from "react";
-import { useAuth } from "../components/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Container, Paper, SimpleGrid, Title } from "@mantine/core";
 import { UserDetailsForm } from "../components/App/Forms/UserDetailsForm";
 import { UserPasswordForm } from "../components/App/Forms/UserPasswordForm";
-import { Code, SimpleGrid, Title, Paper, Container } from "@mantine/core";
-import { notifications } from "@mantine/notifications";
+import { useAuth } from "../components/AuthContext";
 
 export default function Account() {
-  const { user, loadUser, UserUpdate, UserPasswordUpdate } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/login");
-    }
-  }, [user, navigate]);
+  const { user, UserUpdate, UserPasswordUpdate } = useAuth();
 
   const handleUserUpdate = async (values) => {
     UserUpdate({ ...user, ...values });

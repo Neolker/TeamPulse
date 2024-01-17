@@ -24,7 +24,6 @@ function UserInitialPassword() {
   }, [user, users]);
 
   const handleSubmit = (values) => {
-    console.log({ ...user, active: 1 });
     UserUpdate({ ...user, active: 1 });
     UserPasswordUpdate({ ...user, ...values });
 
@@ -42,10 +41,9 @@ function UserInitialPassword() {
     >
       <Title my="md">Hi, {user?.firstname}</Title>
       <Text c="dimmed" mb="md">
-        You have been inveted by your company owner, please change your
-        password
+        You have been inveted by your company owner, please change your password
       </Text>
-      <form onSubmit={form.onSubmit(handleSubmit)}>
+      <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
         <TextInput
           label="New Password"
           type="password"

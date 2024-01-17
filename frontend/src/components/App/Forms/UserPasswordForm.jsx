@@ -35,6 +35,3 @@ export function UserPasswordForm({ action }) {
   );
 }
 
-// Usage
-// <UserDetailsForm user={currentUser} />
-// <PasswordForm />
