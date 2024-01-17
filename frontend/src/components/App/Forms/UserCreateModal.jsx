@@ -38,19 +38,18 @@ export default function UserCreateModal() {
   const generatePassword = () => {
     const password = Math.random().toString(36).slice(-10);
     form.setFieldValue("password", password);
-    setIsCredentialsCopied(false); // Ensure the button reverts to 'Copy' state
+    setIsCredentialsCopied(false);
   };
 
   const handleButtonClick = (values) => {
     if (!isCredentialsCopied) {
-      // Copy credentials to clipboard
       copy(`Email: ${values.email}\nPassword: ${values.password}`);
       setIsCredentialsCopied(true);
     } else {
       const data = { ...user, ...values, active: 0, superadmin: 0}
       createUser(data)
       setOpened(false);
-      setIsCredentialsCopied(false); // Reset for next time the modal is opened
+      setIsCredentialsCopied(false); 
     }
   };
 

@@ -1,6 +1,5 @@
-import { AppShell, Burger, Group, SimpleGrid, Image, rem } from "@mantine/core";
+import { AppShell, Burger, Group, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import logo from "../../assets/logo/Logo_dark.svg";
 import Navbar from "./Navbar/Navbar";
 import { useMediaQuery } from "@mantine/hooks";
 import UserInitialPassword from "./UserInitialPassword";

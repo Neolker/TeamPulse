@@ -1,31 +1,23 @@
-import { useForm } from "@mantine/form";
 import {
-  TextInput,
-  PasswordInput,
-  Text,
-  Paper,
-  Group,
-  Button,
-  Divider,
-  Stack,
-  Container,
   Anchor,
+  Button,
+  Container,
+  Divider,
+  Group,
+  Paper,
+  PasswordInput,
+  Stack,
+  Text,
+  TextInput,
 } from "@mantine/core";
-import { GoogleButton } from "../components/App/GoogleButton";
-import { useEffect } from "react";
+import { useForm } from "@mantine/form";
 import { useNavigate } from "react-router-dom";
+import { GoogleButton } from "../components/App/GoogleButton";
 import { useAuth } from "../components/AuthContext";
 
 export default function Login(props) {
-  const { user, login } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/");
-    }
-  }, [user, navigate]);
 
   const form = useForm({
     initialValues: {

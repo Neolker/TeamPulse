@@ -1,17 +1,6 @@
-import {
-  Box,
-  Button,
-  Group,
-  Loader,
-  Select,
-  TextInput,
-  Textarea,
-} from "@mantine/core";
+import { Box, Button, Group, Select, TextInput, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../../AuthContext";
-import { useCompany } from "../CompanyContext";
 
 export function CompanyDetailsForm({
   company,
@@ -22,8 +11,6 @@ export function CompanyDetailsForm({
   create,
   superadmin,
 }) {
-  const navigate = useNavigate();
-
   const form = useForm({
     initialValues: {
       name: "",
@@ -57,8 +44,6 @@ export function CompanyDetailsForm({
     label: user.email, // Adjust according to your user object structure
   }));
 
-  
-
   return (
     <Box style={{ maxWidth: 400 }} mx="auto">
       <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -72,7 +57,9 @@ export function CompanyDetailsForm({
             searchable
             {...form.getInputProps("owner_id")}
           />
-        ): ""}
+        ) : (
+          ""
+        )}
 
         <Group position="right" mt="md">
           <Button type="submit">{isEditing ? "Update" : "Create"}</Button>

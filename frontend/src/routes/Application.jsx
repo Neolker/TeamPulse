@@ -1,6 +1,13 @@
-import { Button, Container, Group, SimpleGrid, Title, Text } from "@mantine/core";
+import {
+  Button,
+  Container,
+  Group,
+  SimpleGrid,
+  Text,
+  Title,
+} from "@mantine/core";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
 import TaskCard from "../components/App/TaskCard/TaskCard";
 import { isManager, isOwner } from "../components/App/Utils";
@@ -9,15 +16,7 @@ import { useAuth } from "../components/AuthContext";
 export default function Application() {
   const { user } = useAuth();
   const { companies, isLoading } = useCompany();
-  const navigate = useNavigate();
   const [filteredCompanies, setFilteredCompanies] = useState(null);
-
-  useEffect(() => {
-    if (!user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   const filterCompaniesForUser = (companies, userId) => {
     const allcomp = companies;

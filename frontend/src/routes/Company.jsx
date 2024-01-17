@@ -1,22 +1,22 @@
 import {
   ActionIcon,
+  Avatar,
+  Badge,
   Container,
+  Divider,
+  Loader,
   SimpleGrid,
   Stack,
   Text,
   Title,
-  Avatar,
-  Divider,
-  Badge,
-  Loader,
 } from "@mantine/core";
-import { IconSettings, IconPlus } from "@tabler/icons-react";
+import { IconPlus, IconSettings } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
+import { isManager, isOwner } from "../components/App/Utils";
 import { useAuth } from "../components/AuthContext";
 import BackButton from "../components/BackButton";
-import { isOwner, isManager } from "../components/App/Utils";
 
 const avatars = [
   "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
@@ -29,16 +29,8 @@ export default function Company() {
   const company_awid = params.awid;
   const { user, users } = useAuth();
   const { companies, isLoading } = useCompany();
-  const navigate = useNavigate();
   const [company, setCompany] = useState(null);
   const [owner, setOwner] = useState(null);
-
-  useEffect(() => {
-    if (!user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   const findCompanyByAwidAndUserId = (
     companies,

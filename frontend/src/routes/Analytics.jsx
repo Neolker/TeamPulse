@@ -1,24 +1,14 @@
-import { Container, Title, Badge } from "@mantine/core";
-import { useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../components/AuthContext";
+import { Badge, Container, Title } from "@mantine/core";
+import { useEffect, useMemo, useState } from "react";
 import { useCompany } from "../components/App/CompanyContext";
-import { StatsSegments } from "../components/App/StatsSegments/StatsSegments";
 import { StatsGridIcons } from "../components/App/StatsGridIcon/StatsGridIcon";
-import { useState } from "react";
+import { StatsSegments } from "../components/App/StatsSegments/StatsSegments";
+import { useAuth } from "../components/AuthContext";
 
 export default function Analytics() {
   const { user, users, roles } = useAuth();
   const { companies } = useCompany();
-  const navigate = useNavigate();
   const [basicStats, setBasicStats] = useState([]);
-
-  useEffect(() => {
-    if (!user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   useEffect(() => {
     if (users && companies) {
@@ -48,8 +38,8 @@ export default function Analytics() {
     });
 
     const owner = companies.reduce((acc, company) => {
-        return acc + (company.owner_id === user?.id ? 1 : 0);
-      }, 0);
+      return acc + (company.owner_id === user?.id ? 1 : 0);
+    }, 0);
 
     setBasicStats([
       { title: "Users", value: totalUsersInInvolvedCompanies.size },
@@ -112,9 +102,13 @@ export default function Analytics() {
         <Title order={1} p="md">
           Analytics for{" "}
           {user?.superadmin ? (
-            <Badge size="xl" color="yellow">SuperAdmin</Badge>
+            <Badge size="xl" color="yellow">
+              SuperAdmin
+            </Badge>
           ) : (
-            <Badge size="xl" color="yellow">{user?.email}</Badge>
+            <Badge size="xl" color="yellow">
+              {user?.email}
+            </Badge>
           )}
         </Title>
         <Title order={2} p="md">
