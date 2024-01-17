@@ -6,6 +6,7 @@ V tom, co máte upravte následující:
   - [ ] **add**: Validace na BE a ABL (business logika)
   - [ ] **update**: Business Model Book
   - [ ] **update**: Application Model Book
+  - [ ] **add**: doplnitvytvorit **workspace-get** do BM a AM knihy (druha a treti)
 - [ ] aktéři - zabývat se pouze Super User a Member
   - [ ] Zamerit se v knihach pouze na **App Owner** a **Member**
   - [x] I na BE řešit pouze **App Owner** a **Member**
