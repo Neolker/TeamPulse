@@ -41,7 +41,7 @@ V tom, co máte upravte následující:
 - [ ] Vytvořit lepší data ve storage pro prezentaci
 - [ ] Refactoring kódu (např. přehlednější podmínky v business logice)
 - [ ] Session v headru misto body
-- [ ] Nasazeni na cloud / server
+- [x] Nasazeni na cloud / server: http://www.teampulse.cz
 - [ ] Prihlaseni 3. stranami (Google)
 
 ## Teampulse
