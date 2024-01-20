@@ -109,6 +109,38 @@ export const CompanyProvider = ({ children }) => {
     }
   };
 
+  const deleteTask = async (task) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/task/delete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      viewTasks(user.session);
+      notifications.show({
+        title: `Task was deleted successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error deleting task: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const updateTask = async (task) => {
     setIsLoading(true);
 
@@ -318,6 +350,7 @@ export const CompanyProvider = ({ children }) => {
         removeUserFromCompany,
         createTask,
         updateTask,
+        deleteTask
       }}
     >
       {children}
