@@ -1,56 +1,65 @@
 [
   {
-    "id": "T-1548",
-    "workspace_id": "W-1211",
-    "name": "První úkol",
-    "description": "Udělat vše správně.",
-    "solver_id": "U-3287",
+    "id": "T-004-1-01",
+    "workspace_id": "W-004-4",
+    "name": "Robotics Design Review",
+    "description": "Review the latest robotics design schematics.",
+    "solver_id": "U-e6863b44",
     "status": "0",
-    "deadline": "31.1.2024"
+    "deadline": "2024-03-15T00:00:00.000Z"
   },
   {
-    "id": "T-eb7df715",
-    "workspace_id": "W-1111",
-    "name": "test",
-    "description": "test",
-    "solver_id": "U-2222",
-    "status": "99",
-    "deadline": "31.1.2024"
+    "id": "T-004-1-02",
+    "workspace_id": "W-004-4",
+    "name": "Automation Workflow Update",
+    "description": "Update the current automation workflow diagrams.",
+    "solver_id": "U-41a610c4",
+    "status": "2",
+    "deadline": "2024-05-04T00:00:00.000Z"
   },
   {
-    "id": "xxxx",
-    "workspace_id": "xxxx",
-    "name": "xxxx",
-    "description": "xxx",
-    "solver_id": "U-xxx",
-    "status": "xxx",
-    "deadline": "31.1.xxxx"
+    "id": "T-005-1-01",
+    "workspace_id": "W-005-1",
+    "name": "Financial Forecast Analysis",
+    "description": "Analyze the upcoming quarter's financial forecast.",
+    "solver_id": "U-146a7623",
+    "status": "2",
+    "deadline": "2024-02-28"
   },
   {
-    "id": "T-ac11d21d",
-    "workspace_id": "w-test",
-    "name": "aaaa",
-    "description": "bbbb",
-    "solver_id": "cc-cc-cc",
-    "status": "dddd",
-    "deadline": "1.1.2030"
+    "id": "T-005-1-02",
+    "workspace_id": "W-005-1",
+    "name": "Market Research Synthesis",
+    "description": "Compile and synthesize recent market research data.",
+    "solver_id": "U-1c414f46",
+    "status": "1",
+    "deadline": "2024-03-10"
   },
   {
-    "id": "T-adbd3d67",
-    "workspace_id": "W-1234",
-    "name": "Martin",
-    "description": "popis",
-    "solver_id": "solver",
-    "status": "status",
-    "deadline": "1.1.9999"
-  },
-  {
-    "id": "T-eb01a263",
-    "workspace_id": "W-1234",
-    "name": "Testík",
-    "description": "Něco",
+    "id": "T-8fd06bb2",
+    "workspace_id": "W-004-4",
+    "name": "New",
+    "description": "New",
     "solver_id": "U-1b414f26",
-    "status": "",
-    "deadline": "1.1.1999"
+    "status": "0",
+    "deadline": "2024-01-20T14:37:32.128Z"
+  },
+  {
+    "id": "T-140c0622",
+    "workspace_id": "W-004-4",
+    "name": "new",
+    "description": "desc",
+    "solver_id": "U-41a610c4",
+    "status": "1",
+    "deadline": "2024-01-20T17:50:01.426Z"
+  },
+  {
+    "id": "T-a4c49dfe",
+    "workspace_id": "W-004-4",
+    "name": "s",
+    "description": "s",
+    "solver_id": "U-1b414f26",
+    "status": "0",
+    "deadline": "2024-01-20T18:20:17.414Z"
   }
 ]

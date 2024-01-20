@@ -7,27 +7,27 @@
     "users": [
       {
         "user_id": "U-356c3426",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-e6863b44",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-41a610c4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
+      },
+      {
+        "user_id": "U-1b213f26",
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": ["1"]
       }
     ]
   },
@@ -39,21 +39,15 @@
     "users": [
       {
         "user_id": "U-1c414f46",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-0f126ac4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -65,21 +59,15 @@
     "users": [
       {
         "user_id": "U-356c3426",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-146a7623",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -91,21 +79,15 @@
     "users": [
       {
         "user_id": "U-e6863b44",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-0f126ac4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -117,27 +99,19 @@
     "users": [
       {
         "user_id": "U-a8450b45",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-146a7623",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       },
       {
         "user_id": "U-0f126ac4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -149,21 +123,15 @@
     "users": [
       {
         "user_id": "U-41a610c4",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-e6863b44",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -175,21 +143,15 @@
     "users": [
       {
         "user_id": "U-0f126ac4",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-a8450b45",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-146a7623",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -201,21 +163,15 @@
     "users": [
       {
         "user_id": "U-1c414f46",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-41a610c4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -227,27 +183,19 @@
     "users": [
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-e6863b44",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-356c3426",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       }
     ]
   },
@@ -259,21 +207,15 @@
     "users": [
       {
         "user_id": "U-1c414f46",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-41a610c4",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -285,21 +227,15 @@
     "users": [
       {
         "user_id": "U-a8450b45",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-e6863b44",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-1b414f26",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   },
@@ -311,21 +247,27 @@
     "users": [
       {
         "user_id": "U-0f126ac4",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-356c3426",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
-        "user_id": "U-146a7623",
-        "roles": [
-          "2"
-        ]
+        "user_id": "U-e6863b44",
+        "roles": ["0"]
+      },
+      {
+        "user_id": "U-1c414f46",
+        "roles": ["1"]
+      },
+      {
+        "user_id": "U-a8450b45",
+        "roles": ["1"]
+      },
+      {
+        "user_id": "U-1b414f26",
+        "roles": ["1"]
       }
     ]
   },
@@ -337,21 +279,15 @@
     "users": [
       {
         "user_id": "U-1c414f46",
-        "roles": [
-          "0"
-        ]
+        "roles": ["0"]
       },
       {
         "user_id": "U-a8450b45",
-        "roles": [
-          "1"
-        ]
+        "roles": ["1"]
       },
       {
         "user_id": "U-1b213f26",
-        "roles": [
-          "2"
-        ]
+        "roles": ["2"]
       }
     ]
   }
