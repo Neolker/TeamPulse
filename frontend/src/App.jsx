@@ -32,7 +32,7 @@ const App = () => {
         element={<ProtectedRoute component={Settings} />}
       />
       <Route
-        path="company/:awid/workspaces/:workspace_id?"
+        path="company/:awid/workspace/:workspace_id"
         element={<ProtectedRoute component={Workspace} />}
       />
       <Route path="*" element={<NotFound />} />
