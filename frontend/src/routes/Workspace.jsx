@@ -106,7 +106,11 @@ export default function Workspace() {
     return <div>You do not have access to this workspace.</div>;
   }
   const iconStyle = { width: rem(24), height: rem(24) };
-  const isProjectManager = workspace.owner_id === user.id || user.superadmin || companies.find((c) => c.awid === awid)?.owner_id === user.id;
+  const isProjectManager =
+    workspace.owner_id === user.id ||
+    user.superadmin ||
+    companies.find((c) => c.awid === awid)?.owner_id === user.id;
+
 
   return (
     <>
@@ -153,7 +157,11 @@ export default function Workspace() {
                 canEdit={
                   user.id === workspace.owner_id ||
                   user.superadmin ||
-                  user.id === companies.find((c) => c.awid === awid).owner_id
+                  user.id === companies.find((c) => c.awid === awid).owner_id ||
+                  user.id ===
+                    companies
+                      .find((c) => c.awid === awid)
+                      .users.find((u) => u.user_id === user.id && u.roles[0] === "1")?.user_id
                 }
                 workspaceUsers={workspaceUsers}
                 workspaceId={workspace.id}
