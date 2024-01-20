@@ -157,11 +157,11 @@ export default function Workspace() {
                 canEdit={
                   user.id === workspace.owner_id ||
                   user.superadmin ||
-                  user.id === companies.find((c) => c.awid === awid).owner_id ||
-                  user.id ===
-                    companies
-                      .find((c) => c.awid === awid)
-                      .users.find((u) => u.user_id === user.id && u.roles[0] === "1")?.user_id
+                  user.id === companies.find((c) => c.awid === awid).owner_id 
+                  // || user.id ===
+                  //   companies
+                  //     .find((c) => c.awid === awid)
+                  //     .users.find((u) => u.user_id === user.id && u.roles[0] === "1").user_id
                 }
                 workspaceUsers={workspaceUsers}
                 workspaceId={workspace.id}
