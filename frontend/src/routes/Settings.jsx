@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useCompany } from "../components/App/CompanyContext";
 import { CompanyDetailsForm } from "../components/App/Forms/CompanyDetailsForm";
-import { CompanyMembersForm } from "../components/App/Forms/CompanyMembersForm";
+import { CompanyUsersForm } from "../components/App/Forms/CompanyUsersForm";
 import { useAuth } from "../components/AuthContext";
 import BackButton from "../components/BackButton";
 
@@ -21,13 +21,6 @@ export default function Settings() {
   const location = useLocation();
   const isEditing = location.pathname.includes(`settings/${awid}`);
   const [company, setCompany] = useState(null);
-
-  useEffect(() => {
-    if (!user) {
-      // If the user is logged in, redirect to the home page
-      navigate("/login");
-    }
-  }, [user, navigate]);
 
   useEffect(() => {
     if (isEditing && awid && companies) {
@@ -95,7 +88,7 @@ export default function Settings() {
                 Update your company members
               </Title>
               {company && users && roles && (
-                <CompanyMembersForm
+                <CompanyUsersForm
                   currentCompanyUsers={company?.users}
                   allUsers={users}
                   addMember={(values) => handleAddMember(values)}

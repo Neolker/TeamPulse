@@ -59,7 +59,7 @@ export default function TasksTab({
   };
   const handleDeleteTask = (task) => {
     modals.openConfirmModal({
-      title: "Delete your company member",
+      title: "Delete task",
       centered: true,
       children: (
         <Text size="sm">
@@ -133,7 +133,7 @@ export default function TasksTab({
                     {status?.label}
                   </Badge>
                 </Group>
-                <Badge variant="light" color={solver?.roles[0]?.color}>
+                <Badge variant="light" color={solver?.role?.color}>
                   {solver?.label}
                 </Badge>
                 <Text>{task.description}</Text>
