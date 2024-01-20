@@ -10,7 +10,15 @@ export const useCompany = () => useContext(CompanyContext);
 export const CompanyProvider = ({ children }) => {
   const { user } = useAuth();
   const [companies, setCompanies] = useState([]);
+  const [workspaces, setWorkspaces] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const taskStatusOptions = [
+    { value: "0", label: "Pending", color: "yellow" },
+    { value: "1", label: "In Progress", color: "blue" },
+    { value: "2", label: "Done", color: "green" },
+  ];
 
   const viewCompanies = async (session) => {
     setIsLoading(true);
@@ -26,6 +34,109 @@ export const CompanyProvider = ({ children }) => {
       setCompanies(data);
     } catch (error) {
       console.error("Error viewing companies: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const viewWorkspaces = async (session) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        `http://localhost:8000/workspace/view?session=${session}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setWorkspaces(data);
+    } catch (error) {
+      console.error("Error viewing workspaces: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const viewTasks = async (session) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        `http://localhost:8000/task/view?session=${session}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setTasks(data);
+    } catch (error) {
+      console.error("Error viewing tasks: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const createTask = async (task) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/task/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      viewTasks(user.session);
+      const data = await response.json();
+      notifications.show({
+        title: `Task "${data.name}" was created successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error creating task: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const updateTask = async (task) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/task/update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      viewTasks(user.session);
+      const data = await response.json();
+      notifications.show({
+        title: `Task "${data.name}" was updated successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error updating task: ", error);
     } finally {
       setIsLoading(false);
     }
@@ -172,7 +283,7 @@ export const CompanyProvider = ({ children }) => {
         });
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-        await viewCompanies(user.session);
+      await viewCompanies(user.session);
       notifications.show({
         title: `User was successsfully removed.`,
         color: "green",
@@ -187,6 +298,8 @@ export const CompanyProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       viewCompanies(user.session);
+      viewWorkspaces(user.session);
+      viewTasks(user.session);
     }
   }, [user]);
 
@@ -194,12 +307,17 @@ export const CompanyProvider = ({ children }) => {
     <CompanyContext.Provider
       value={{
         companies,
+        workspaces,
+        tasks,
+        taskStatusOptions,
         isLoading,
         viewCompanies,
         createCompany,
         updateCompany,
         addUserToCompany,
         removeUserFromCompany,
+        createTask,
+        updateTask,
       }}
     >
       {children}

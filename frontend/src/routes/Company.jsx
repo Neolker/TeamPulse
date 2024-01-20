@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
   Title,
+  Button,
 } from "@mantine/core";
 import { IconPlus, IconSettings } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
@@ -28,8 +29,9 @@ export default function Company() {
   const params = useParams();
   const company_awid = params.awid;
   const { user, users } = useAuth();
-  const { companies, isLoading } = useCompany();
+  const { companies, workspaces, isLoading } = useCompany();
   const [company, setCompany] = useState(null);
+  const [filteredWorkspaces, setFilteredWorkspaces] = useState([]);
   const [owner, setOwner] = useState(null);
 
   const findCompanyByAwidAndUserId = (
@@ -56,23 +58,50 @@ export default function Company() {
   };
 
   useEffect(() => {
-    if (!isLoading && companies && user) {
-      setCompany(
-        findCompanyByAwidAndUserId(
-          companies,
-          company_awid,
-          user.id,
-          user.superadmin
-        )
+    if (!isLoading && companies && user && workspaces && users) {
+      const currentCompany = findCompanyByAwidAndUserId(
+        companies,
+        company_awid,
+        user.id,
+        user.superadmin
       );
-    }
-  }, [companies, company_awid, isLoading, user]);
+      setCompany(currentCompany);
 
-  useEffect(() => {
-    if (!isLoading && company && users) {
-      setOwner(users.find((user) => user.id === company.owner_id));
+      if (currentCompany) {
+        setOwner(users.find((u) => u.id === currentCompany.owner_id));
+
+        const isCompanyOwnerOrSuperadmin =
+          user.superadmin || currentCompany.owner_id === user.id;
+
+        // Filter workspaces based on the company and user role
+        const relevantWorkspaces = workspaces
+          .filter((ws) => {
+            const isUserRelated =
+              isCompanyOwnerOrSuperadmin ||
+              ws.owner_id === user.id ||
+              ws.members.includes(user.id);
+            return ws.awid === company_awid && isUserRelated;
+          })
+          .map((ws) => {
+            return {
+              ...ws,
+              owner:
+                users.find((u) => u.id === ws.owner_id)?.firstname +
+                " " +
+                users.find((u) => u.id === ws.owner_id)?.lastname,
+              members: ws.members.map((memberId) => {
+                const member = users.find((u) => u.id === memberId);
+                return member
+                  ? member.firstname + " " + member.lastname
+                  : "Unknown";
+              }),
+            };
+          });
+
+        setFilteredWorkspaces(relevantWorkspaces);
+      }
     }
-  }, [isLoading, company, users]);
+  }, [companies, company_awid, isLoading, user, workspaces, users]);
 
   if (isLoading) {
     return <Loader />;
@@ -141,12 +170,35 @@ export default function Company() {
         </SimpleGrid>
 
         <Divider mt="lg" />
+        <Title order={2} p="md">
+          Company Users
+        </Title>
+        {company?.users?.map((userObj) => (
+          <Text key={userObj.user_id}>
+            {users.find((u) => u.id === userObj.user_id)?.firstname +
+              " " +
+              users.find((u) => u.id === userObj.user_id)?.lastname}
+          </Text>
+        ))}
+
+        <Divider mt="lg" />
 
         <Title order={2} p="md">
           Workspace / Workspaces
         </Title>
 
-        <SimpleGrid cols={{ base: 1, sm: 2, lg: 2, xl: 2 }}></SimpleGrid>
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 2, xl: 2 }}>
+          {filteredWorkspaces.map((workspace) => (
+            <div key={workspace.id}>
+              <Text>{workspace.name}</Text>
+              <Link
+                to={"/company/" + workspace.awid + "/workspace/" + workspace.id}
+              >
+                <Button radius="md">Show details</Button>
+              </Link>
+            </div>
+          ))}
+        </SimpleGrid>
       </Container>
     </>
   );
