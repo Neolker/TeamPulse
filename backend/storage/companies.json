@@ -6,16 +6,12 @@
     "owner_id": "U-1b213f26",
     "users": [
       {
-        "user_id": "U-356c3426",
-        "roles": ["0"]
-      },
-      {
         "user_id": "U-e6863b44",
         "roles": ["1"]
       },
       {
         "user_id": "U-41a610c4",
-        "roles": ["2"]
+        "roles": ["0"]
       },
       {
         "user_id": "U-1b213f26",
@@ -26,7 +22,15 @@
         "roles": ["0"]
       },
       {
-        "user_id": "U-1b414f26",
+        "user_id": "U-0f126ac4",
+        "roles": ["1"]
+      },
+      {
+        "user_id": "U-a8450b45",
+        "roles": ["1"]
+      },
+      {
+        "user_id": "U-146a7623",
         "roles": ["1"]
       }
     ]
