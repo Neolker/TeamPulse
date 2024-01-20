@@ -5,7 +5,10 @@
     "name": "Project Alpha Innovation",
     "description": "Cutting-edge Robotics Development",
     "owner_id": "U-1b213f26",
-    "members": ["U-356c3426", "U-e6863b44"]
+    "members": [
+      "U-356c3426",
+      "U-e6863b44"
+    ]
   },
   {
     "id": "W-004-2",
@@ -13,7 +16,9 @@
     "name": "Project Beta Automation",
     "description": "Automation Solutions and Design",
     "owner_id": "U-1b213f26",
-    "members": ["U-41a610c4"]
+    "members": [
+      "U-41a610c4"
+    ]
   },
   {
     "id": "W-004-3",
@@ -21,7 +26,10 @@
     "name": "Project Gamma Robotics",
     "description": "Robotics Engineering and Research",
     "owner_id": "U-1b213f26",
-    "members": ["U-e6863b44", "U-356c3426"]
+    "members": [
+      "U-e6863b44",
+      "U-356c3426"
+    ]
   },
   {
     "id": "W-004-4",
@@ -29,16 +37,22 @@
     "name": "Project Delta Management",
     "description": "Project Management for Tech Teams",
     "owner_id": "U-1b414f26",
-    "members": ["U-41a610c4", "U-e6863b44"]
+    "members": [
+      "U-e6863b44",
+      "U-1b213f26",
+      "U-41a610c4"
+    ]
   },
-
   {
     "id": "W-005-1",
     "awid": "C-005",
     "name": "Project Epsilon Analysis",
     "description": "Financial Data Analysis and Reporting",
     "owner_id": "U-146a7623",
-    "members": ["U-1c414f46", "U-1b414f26"]
+    "members": [
+      "U-1c414f46",
+      "U-1b414f26"
+    ]
   },
   {
     "id": "W-005-2",
@@ -46,7 +60,10 @@
     "name": "Project Zeta Research",
     "description": "In-depth Market Research and Trends",
     "owner_id": "U-146a7623",
-    "members": ["U-0f126ac4", "U-1b414f26"]
+    "members": [
+      "U-0f126ac4",
+      "U-1b414f26"
+    ]
   },
   {
     "id": "W-005-3",
@@ -54,7 +71,10 @@
     "name": "Project Eta Strategy",
     "description": "Strategic Business Planning",
     "owner_id": "U-146a7623",
-    "members": ["U-1c414f46", "U-0f126ac4"]
+    "members": [
+      "U-1c414f46",
+      "U-0f126ac4"
+    ]
   },
   {
     "id": "W-005-4",
@@ -62,6 +82,9 @@
     "name": "Project Theta Efficiency",
     "description": "Optimizing Operational Processes",
     "owner_id": "U-146a7623",
-    "members": ["U-1b414f26", "U-0f126ac4"]
+    "members": [
+      "U-1b414f26",
+      "U-0f126ac4"
+    ]
   }
 ]
