@@ -43,23 +43,5 @@
     "solver_id": "U-1b414f26",
     "status": "0",
     "deadline": "2024-01-20T14:37:32.128Z"
-  },
-  {
-    "id": "T-140c0622",
-    "workspace_id": "W-004-4",
-    "name": "new",
-    "description": "desc",
-    "solver_id": "U-41a610c4",
-    "status": "1",
-    "deadline": "2024-01-20T17:50:01.426Z"
-  },
-  {
-    "id": "T-a4c49dfe",
-    "workspace_id": "W-004-4",
-    "name": "s",
-    "description": "s",
-    "solver_id": "U-1b414f26",
-    "status": "0",
-    "deadline": "2024-01-20T18:20:17.414Z"
   }
 ]
