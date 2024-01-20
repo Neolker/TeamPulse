@@ -9,7 +9,8 @@ import {
   Title,
   ActionIcon,
   Grid,
-  Center
+  Center,
+  Divider,
 } from "@mantine/core";
 import { IconTrash } from "@tabler/icons-react";
 import { modals } from "@mantine/modals";
@@ -19,9 +20,8 @@ import { useCompany } from "./CompanyContext";
 
 export default function TasksTab({
   user,
-  users,
   tasks,
-  isCompanyOwner,
+  canEdit,
   workspaceUsers,
   workspaceId,
 }) {
@@ -94,7 +94,7 @@ export default function TasksTab({
           <Text>No tasks</Text>
         </Group>
       ) : (
-        <Group mt="md" justify="space-between">
+        <Group my="lg" justify="space-around">
           <Badge size="lg">Total: {totalTasks}</Badge>
           <Badge size="lg" color="yellow">
             Pending: {pendingTasks}
@@ -105,14 +105,14 @@ export default function TasksTab({
           <Badge size="lg" color="green">
             Done: {completedTasks}
           </Badge>
-
-          {isCompanyOwner && (
-            <Button mb="md" radius="md" onClick={openNewTaskModal}>
+          {canEdit && (
+            <Button radius="md" onClick={openNewTaskModal}>
               Create New Task
             </Button>
           )}
         </Group>
       )}
+      <Divider size="sm" my="md" />
       <SimpleGrid cols={{ base: 1, sm: 2, lg: 2, xl: 3 }}>
         {tasks.map((task) => {
           const solver = workspaceUsers?.find(
@@ -156,6 +156,7 @@ export default function TasksTab({
                         color="red"
                         aria-label="Delete task"
                         size="lg"
+                        disabled={!canEdit}
                       >
                         <IconTrash
                           style={{ width: "70%", height: "70%" }}

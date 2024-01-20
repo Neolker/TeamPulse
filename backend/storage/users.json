@@ -54,9 +54,9 @@
     "firstname": "Miloš",
     "lastname": "Hynek",
     "email": "milos.hynek@teampulse.com",
-    "session": "S-e60256dfce88fa78-TS",
+    "session": "S-2f96076c4182e260-TS",
     "password": "26055d82253f8f8ba9662920d8cfd34a",
-    "active": 0,
+    "active": 1,
     "superadmin": 0
   },
   {
@@ -84,9 +84,9 @@
     "firstname": "Martin",
     "lastname": "Wolker",
     "email": "martin.wolker@teampulse.com",
-    "session": "",
+    "session": "S-dbdfa47d04d274c4-TS",
     "password": "f28c35646d9c8e904f442e46739de3e4",
-    "active": 0,
+    "active": 1,
     "superadmin": 0
   }
 ]

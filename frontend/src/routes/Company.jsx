@@ -177,7 +177,7 @@ export default function Company() {
           <Text key={userObj.user_id}>
             {users.find((u) => u.id === userObj.user_id)?.firstname +
               " " +
-              users.find((u) => u.id === userObj.user_id)?.lastname}
+              users.find((u) => u.id === userObj.user_id)?.lastname + " " + users.find((u) => u.id === userObj.user_id)?.email}
           </Text>
         ))}
 

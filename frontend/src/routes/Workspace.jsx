@@ -106,7 +106,7 @@ export default function Workspace() {
     return <div>You do not have access to this workspace.</div>;
   }
   const iconStyle = { width: rem(24), height: rem(24) };
-  const isProjectManager = workspace.owner_id === user.id;
+  const isProjectManager = workspace.owner_id === user.id || user.superadmin || companies.find((c) => c.awid === awid)?.owner_id === user.id;
 
   return (
     <>
@@ -150,7 +150,7 @@ export default function Workspace() {
             <Tabs.Panel value="tasks">
               <TasksTab
                 tasks={workspaceTasks}
-                isCompanyOwner={
+                canEdit={
                   user.id === workspace.owner_id ||
                   user.superadmin ||
                   user.id === companies.find((c) => c.awid === awid).owner_id
@@ -158,7 +158,6 @@ export default function Workspace() {
                 workspaceUsers={workspaceUsers}
                 workspaceId={workspace.id}
                 user={user}
-                users={users}
               />
             </Tabs.Panel>
 
