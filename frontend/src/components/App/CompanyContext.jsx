@@ -174,6 +174,70 @@ export const CompanyProvider = ({ children }) => {
     }
   };
 
+  const addWorkspaceMember = async (values) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/workspace/add-member", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      viewWorkspaces(user.session);
+      notifications.show({
+        title: `User was added successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error adding user: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const removeWorkspaceMember = async (values) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/workspace/delete-member", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        notifications.show({
+          title: JSON.stringify(data.error),
+          color: "red",
+        });
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      viewWorkspaces(user.session);
+      notifications.show({
+        title: `User was removed successfully`,
+        color: "green",
+      });
+    } catch (error) {
+      console.error("Error removing user: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const createCompany = async (session, name, description, ownerId) => {
     setIsLoading(true);
 
@@ -350,7 +414,9 @@ export const CompanyProvider = ({ children }) => {
         removeUserFromCompany,
         createTask,
         updateTask,
-        deleteTask
+        deleteTask,
+        removeWorkspaceMember,
+        addWorkspaceMember
       }}
     >
       {children}

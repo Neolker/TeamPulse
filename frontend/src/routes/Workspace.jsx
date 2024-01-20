@@ -15,20 +15,28 @@ import { useCompany } from "../components/App/CompanyContext";
 import TasksTab from "../components/App/TasksTab";
 import { useAuth } from "../components/AuthContext";
 import BackButton from "../components/BackButton";
+import WorkspaceMembersForm from "../components/App/Forms/WorkspaceMembersForm";
 
 export default function Workspace() {
   const params = useParams();
   const { awid, workspace_id } = params;
   const { user, users, roles } = useAuth();
-  const { companies, workspaces, tasks } = useCompany();
+  const {
+    companies,
+    workspaces,
+    tasks,
+    removeWorkspaceMember,
+    addWorkspaceMember,
+  } = useCompany();
   const [workspace, setWorkspace] = useState(null);
   const [workspaceTasks, setWorkspaceTasks] = useState([]);
   const [workspaceUsers, setWorkspaceUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isUserAuthorized, setIsUserAuthorized] = useState(false);
-  const [ownerDetails, setOwnerDetails] = useState({ name: "", email: "" });
+  const [owner, setOwner] = useState({});
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchedWorkspace = workspaces.find(
       (ws) => ws.id === workspace_id && ws.awid === awid
     );
@@ -51,19 +59,17 @@ export default function Workspace() {
         ? relatedTasks
         : relatedTasks.filter((task) => task.solver_id === user.id);
       setWorkspaceTasks(userSpecificTasks);
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   }, [awid, workspace_id, user, companies, tasks, workspace, workspaces]);
 
   useEffect(() => {
+    setIsLoading(true);
+
     if (workspace && users) {
       let owner = users.find((u) => u.id === workspace.owner_id);
 
-      setOwnerDetails({
-        name: owner ? owner.firstname + " " + owner.lastname : "Unknown",
-        email: owner ? owner.email : "N/A",
-      });
+      setOwner(owner);
     }
     if (workspace && companies && users) {
       const currentCompany = companies.find((c) => c.awid === workspace.awid);
@@ -72,27 +78,44 @@ export default function Workspace() {
 
         const mappedUsers = allWorkspaceUsers.map((memberId) => {
           const userDetail = users.find((u) => u.id === memberId);
-          const userRoles =
-            currentCompany.users.find((u) => u.user_id === memberId)?.roles ||
-            [];
-          const roleName = userRoles.map((roleId) =>
-            roles.find((r) => r.id === roleId)
-          );
+          const userRole =
+            currentCompany.users.find((u) => u.user_id === memberId)
+              ?.roles[0] || "";
+          const role = roles.find((r) => r.id === userRole);
           return {
-            id: userDetail.id,
+            ...userDetail,
             value: memberId,
-            label: `${userDetail.firstname} ${userDetail.lastname} (${roleName[0]?.name})`,
+            label: `${userDetail.firstname} ${userDetail.lastname} (${role?.name})`,
             name: userDetail
               ? `${userDetail.firstname} ${userDetail.lastname}`
               : "Unknown",
-            email: userDetail.email,
-            roles: roleName || "No roles",
+            role: role || "No roles",
           };
         });
         setWorkspaceUsers(mappedUsers);
+        setIsLoading(false);
       }
     }
-  }, [workspace, users, roles]);
+  }, [workspace, users, roles, companies]);
+
+  const handleAddMember = (values) => {
+    values.map((id) =>
+      addWorkspaceMember({
+        session: user.session,
+        id: workspace.id,
+        user_id: id,
+      })
+    );
+  };
+  const handleRemoveMember = (id) => {
+    removeWorkspaceMember({
+      session: user.session,
+      id: workspace.id,
+      user_id: id,
+    });
+  };
+
+  handleRemoveMember;
 
   if (isLoading) {
     return <Loader />;
@@ -111,6 +134,14 @@ export default function Workspace() {
     user.superadmin ||
     companies.find((c) => c.awid === awid)?.owner_id === user.id;
 
+  const canEdit =
+    user.id === workspace.owner_id ||
+    user.superadmin ||
+    user.id === companies.find((c) => c.awid === awid).owner_id;
+  // || user.id ===
+  //   companies
+  //     .find((c) => c.awid === awid)
+  //     .users.find((u) => u.user_id === user.id && u.roles[0] === "1").user_id
 
   return (
     <>
@@ -122,7 +153,7 @@ export default function Workspace() {
           <Text span>
             Owner:{" "}
             <b>
-              {ownerDetails.name} ({ownerDetails.email})
+              {owner?.name} ({owner?.email})
             </b>
           </Text>
 
@@ -154,15 +185,7 @@ export default function Workspace() {
             <Tabs.Panel value="tasks">
               <TasksTab
                 tasks={workspaceTasks}
-                canEdit={
-                  user.id === workspace.owner_id ||
-                  user.superadmin ||
-                  user.id === companies.find((c) => c.awid === awid).owner_id 
-                  // || user.id ===
-                  //   companies
-                  //     .find((c) => c.awid === awid)
-                  //     .users.find((u) => u.user_id === user.id && u.roles[0] === "1").user_id
-                }
+                canEdit={canEdit}
                 workspaceUsers={workspaceUsers}
                 workspaceId={workspace.id}
                 user={user}
@@ -170,15 +193,31 @@ export default function Workspace() {
             </Tabs.Panel>
 
             <Tabs.Panel value="users">
-              {workspaceUsers.map((user) => (
-                <Text key={user.id}>
-                  {`${user.name} (${user.email}) - `}
-                  <Badge variant="light" color={user.roles[0]?.color}>
-                    {user.roles[0]?.name}
-                  </Badge>
-                  ;
-                </Text>
-              ))}
+              <WorkspaceMembersForm
+                allUsers={companies
+                  .find((c) => c.awid === awid)
+                  ?.users.map((user) => {
+                    const userDetails = users?.find(
+                      (u) => user.user_id === u.id
+                    );
+                    const role =
+                      roles.find((role) => role.id === user.roles[0]) ||
+                      "No role";
+                    return {
+                      ...user,
+                      ...userDetails,
+                      role: role,
+                    };
+                  })}
+                currentWorkspaceUsers={workspaceUsers}
+                addMember={(id) => {
+                  handleAddMember(id);
+                }}
+                removeMember={(id) => handleRemoveMember(id)}
+                isLoading={isLoading}
+                owner={owner}
+                canEdit={canEdit}
+              />
             </Tabs.Panel>
 
             <Tabs.Panel value="settings">
