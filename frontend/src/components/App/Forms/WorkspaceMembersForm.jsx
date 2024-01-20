@@ -38,11 +38,6 @@ export default function WorkspaceMembersForm({
     },
   });
 
-  //   const availableUsers = useMemo(() => {
-  //     const currentCompanyUserIds = new Set(selectedUsers.map((u) => u.id));
-  //     return allUsers.filter((user) => !currentCompanyUserIds.has(user.id));
-  //   }, [allUsers, selectedUsers]);
-
   useEffect(() => {
     if (currentWorkspaceUsers) {
       setSelectedUsers(currentWorkspaceUsers);
@@ -65,7 +60,7 @@ export default function WorkspaceMembersForm({
     await addMember(values.user);
     setSelectedUsers((prevUsers) => [
       ...prevUsers,
-      ...values.user.map((id) => ({ id: id })),
+      ...values.user.map((id) => allUsers?.find((user) => user.id === id)),
     ]);
     form.reset();
   };
