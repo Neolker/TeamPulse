@@ -96,13 +96,13 @@ export default function TasksTab({
       ) : (
         <Group my="lg" justify="space-around">
           <Badge size="lg">Total: {totalTasks}</Badge>
-          <Badge size="lg" color="yellow">
+          <Badge size="lg" color="yellow" variant="light">
             Pending: {pendingTasks}
           </Badge>
-          <Badge size="lg" color="blue">
+          <Badge size="lg" color="blue" variant="light">
             In progress: {totalTasks - pendingTasks - completedTasks}
           </Badge>
-          <Badge size="lg" color="green">
+          <Badge size="lg" color="green" variant="light">
             Done: {completedTasks}
           </Badge>
           {canEdit && (
@@ -129,7 +129,7 @@ export default function TasksTab({
                   <Badge color="orange" size="lg">
                     {formatDate(task.deadline)}
                   </Badge>
-                  <Badge size="lg" color={status.color}>
+                  <Badge size="lg" color={status.color} variant="light">
                     {status?.label}
                   </Badge>
                 </Group>

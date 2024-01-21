@@ -58,10 +58,6 @@ export default function WorkspaceMembersForm({
 
   const handleSubmit = async (values) => {
     await addMember(values.user);
-    setSelectedUsers((prevUsers) => [
-      ...prevUsers,
-      ...values.user.map((id) => allUsers?.find((user) => user.id === id)),
-    ]);
     form.reset();
   };
 
@@ -102,7 +98,10 @@ export default function WorkspaceMembersForm({
                 label="Select User"
                 data={allUserOptions}
                 value={form.values.user}
-                onChange={(value) => form.setFieldValue("user", value)}
+                onChange={(value) => {
+                  // Only keep the latest selected user
+                  form.setFieldValue("user", [value[value.length - 1]] || null);
+                }}
                 placeholder="Select a user"
                 searchable
                 error={form.errors.user}

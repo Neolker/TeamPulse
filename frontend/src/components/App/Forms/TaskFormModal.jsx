@@ -30,11 +30,31 @@ export default function TaskFormModal({
     },
 
     validate: {
-      name: (value) => (value ? null : "Task name is required"),
-      description: (value) => (value ? null : "Description is required"),
+      name: (value) => {
+        if (!value) return "Task name is required";
+        if (value.length < 1 || value.length > 128)
+          return "Task name must be between 1 and 128 characters";
+        return null;
+      },
+      description: (value) => {
+        if (!value) return "Description is required";
+        if (value.length < 1 || value.length > 65536)
+          return "Description must be between 1 and 65536 characters";
+        return null;
+      },
       status: (value) => (value ? null : "Status is required"),
-      deadline: (value) => (value ? null : "Deadline is required"),
-      solver_id: (value) => (value ? null : "Solver is required"),
+      solver_id: (value) => {
+        if (!value) return "Solver is required";
+        if (value.length < 6 || value.length > 64)
+          return "Solver ID must be between 6 and 64 characters";
+        return null;
+      },
+      deadline: (value) => {
+        if (!value) return "Deadline is required";
+        if (value.length < 8 || value.length > 64)
+          return "Deadline must be between 8 and 64 characters";
+        return null;
+      },
     },
   });
 
@@ -99,6 +119,7 @@ export default function TaskFormModal({
           data={users}
           allowDeselect={false}
           withAsterisk
+          searchable
           {...form.getInputProps("solver_id")}
         />
         <Select
@@ -112,7 +133,7 @@ export default function TaskFormModal({
           minDate={new Date()}
           label="Deadline"
           placeholder="Deadline"
-          valueFormat="DD/MM/YYYY HH:mm"
+          valueFormat="DD.MM.YYYY HH:mm"
           {...form.getInputProps("deadline")}
           withAsterisk
         />
