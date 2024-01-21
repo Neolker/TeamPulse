@@ -10,16 +10,6 @@
     "superadmin": "1"
   },
   {
-    "id": "U-1b213f26",
-    "firstname": "Martin",
-    "lastname": "Wolker",
-    "email": "neolker@gmail.com",
-    "session": "",
-    "password": "955db0b81ef1989b4a4dfeae8061a9a6",
-    "active": "1",
-    "superadmin": "0"
-  },
-  {
     "id": "U-146a7623",
     "firstname": "Jára",
     "lastname": "Cimrman",
@@ -34,7 +24,7 @@
     "firstname": "team",
     "lastname": "pulse",
     "email": "admin@teampulse.com",
-    "session": "S-b3bfe1c2a2eab5d9-TS",
+    "session": "S-84c9ae19e0c835ad-TS",
     "password": "1bef317e41b92698b126e88ca61d55cb",
     "active": 1,
     "superadmin": 1
@@ -64,7 +54,7 @@
     "firstname": "Marek",
     "lastname": "Hovančák",
     "email": "marek.hovancak@teampulse.com",
-    "session": "S-0dd55d9f49cf59b5-TS",
+    "session": "S-0a4e6449ead4c792-TS",
     "password": "cde532f5b85657b870562ebe89ab04e7",
     "active": 1,
     "superadmin": 0

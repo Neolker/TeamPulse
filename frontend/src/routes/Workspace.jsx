@@ -99,13 +99,14 @@ export default function Workspace() {
   }, [workspace, users, roles, companies]);
 
   const handleAddMember = (values) => {
-    values.map((id) =>
+    console.log(values);
+    values.map((id) => {
       addWorkspaceMember({
         session: user.session,
         id: workspace.id,
         user_id: id,
-      })
-    );
+      });
+    });
   };
   const handleRemoveMember = (id) => {
     removeWorkspaceMember({
@@ -153,7 +154,7 @@ export default function Workspace() {
           <Text span>
             Owner:{" "}
             <b>
-              {owner?.name} ({owner?.email})
+              {owner?.firstname} {owner?.lastname} ({owner?.email})
             </b>
           </Text>
 
@@ -210,8 +211,8 @@ export default function Workspace() {
                     };
                   })}
                 currentWorkspaceUsers={workspaceUsers}
-                addMember={(id) => {
-                  handleAddMember(id);
+                addMember={async (id) => {
+                  await handleAddMember(id);
                 }}
                 removeMember={(id) => handleRemoveMember(id)}
                 isLoading={isLoading}
