@@ -72,7 +72,12 @@ async function CreateAbl(req, res) {
 		  if(task.workspace_id.length<6){throw new Error("Workspace_id is required, task has not been created. Minimal lenght: 6 characters.");}
 		  if(task.description.length<1){throw new Error("Description is required, task has not been created. Minimal lenght: 1 character in the description.");}
 		  if(task.solver_id.length<6){throw new Error("Solver_id is required, task has not been created. Minimal lenght: 6 characters.");}
-		  if(task.deadline.length<8){throw new Error("Date of deadline is required, task has not been created. Minimal lenght: 8 character in the description.");}    
+		  if(task.deadline.length<8){throw new Error("Date of deadline is required, task has not been created. Minimal lenght: 8 character in the deadline.");}    		  
+		  if(task.name.length>128){throw new Error("Task has not been created. Maximal lenght: 128 character in the name.");}
+		  if(task.workspace_id.length>64){throw new Error("Task has not been created. Maximal lenght: 64 characters in the workspace_id.");}
+		  if(task.description.length>65536){throw new Error("Task has not been created. Maximal lenght: 65536 character in the description.");}
+		  if(task.solver_id.length>64){throw new Error("Task has not been created. Maximal lenght: 64 characters in the solver_id.");}
+		  if(task.deadline.length>64){throw new Error("Task has not been created. Maximal lenght: 64 character in the deadline.");}    		  
 		  //fill-in prototype:
 		  taskPrototype.workspace_id = task.workspace_id;
 		  taskPrototype.name = task.name;

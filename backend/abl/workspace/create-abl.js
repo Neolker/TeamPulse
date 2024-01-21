@@ -68,6 +68,9 @@ async function CreateAbl(req, res) {
 		  if(workspace.name.length<1){throw new Error("Name is required, workspace has not been created. Minimal lenght: 1 character in the name.");}   
 		  if(workspace.awid.length<3){throw new Error("Awid is required, workspace has not been created. Minimal lenght: 3 character in the awid.");}   
 		  if(workspace.owner_id.length<6){throw new Error("Owner_id is required, workspace has not been created. Minimal lenght: 6 characters.");}     
+		  if(workspace.name.length>128){throw new Error("Workspace has not been created. Maximal lenght: 128 character in the name.");}   
+		  if(workspace.awid.length>64){throw new Error("Workspace has not been created. Maximal lenght: 64 character in the awid.");}   
+		  if(workspace.owner_id.length>64){throw new Error("Workspace has not been created. Maximal lenght: 64 characters in the owner_id.");}     		  
 		  //fill-in prototype 
 		 	wsPrototype.awid = workspace.awid;
 		 	wsPrototype.name = workspace.name;
